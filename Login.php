@@ -28,6 +28,8 @@ if(
 <br>
 
 <?php
+$username =$_SESSION["username"];
+echo"$username";
 if( !array_key_exists( "username",$_SESSION))
 {
 echo'
