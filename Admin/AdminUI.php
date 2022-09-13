@@ -21,6 +21,15 @@ while ($allDifArray=mysqli_fetch_array($allDif)){
             break;
     }
     echo"their surname is $surname";
+    echo'<form method = "post">
+    <select value="no '.$username.'" >no</select>
+    <select value="yes '.$username.'" >esy</select>
+</form>';
 }
 ?>
+<p>can you confirm ?</p>
+<form method = "post">
+    <select value="no" >no</select>
+    <select value="yes" >esy</select>
+</form>
 <h1>you are now the admin</h1>
