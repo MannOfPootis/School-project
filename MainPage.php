@@ -6,8 +6,9 @@ include "login.php";
 
 //include "Signin.php";
 
-if(array_key_exists($_SESSION, 'username')){
-  echo'<a href="http://localhost/school-project/Logout.php">logout</a>'
+if(array_key_exists('username',$_SESSION ))
+{
+  echo'<a href="http://localhost/school-project/Logout.php">logout</a>';
 }
 
 ?>
