@@ -1,91 +1,46 @@
+ <h1> this is the login form </h1>
+ <?php
+ session_start();
+if(
+    array_key_exists( "username",$_POST)&&
+    array_key_exists( "password",$_POST)
+    )
+    {
+        $username=$_POST["username"];
+        $password=$_POST["password"];
+        $gotten_password=sqli_takefirst($conn->query("SELECT password from user where username ='$username'"));
+        if(password_verify($password, $gotten_password))
+        {
+
+            $_SESSION["username"]=$username;
+            header('Refresh: 0');
+
+        }
+        else{
+          echo "<p>bad login boyo</p>";
+          session_destroy();
+
+
+      }
+  }
+?>
+
+<br>
+
 <?php
- 
-     include 'header.php';
+if( !array_key_exists( "username",$_SESSION))
+{
+echo'
+<form action="" method="post">
 
-   $error = "";
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
-      
-      $myusername = $_POST['username'];
-      $mypassword = $_POST['password']; 
-      
+Please log in<br><br>
+<div class="borderp">
+username:<br> <input type="text" name="username"><br>
+password:<br>   <input type="password" name="password"><br>
+<input type="submit" value="login">
+</form>
+</h2>
 
-    $sql = "SELECT password FROM login WHERE username = '$myusername'";
-      $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      
-      $count = mysqli_num_rows($result);
-         
-
-         if($count == 1) {
-      
-      $RESULT = $row['password'];
-      if (password_verify($mypassword, $RESULT)) {
-        
-         $_SESSION['loged_in_name'] = $myusername;
-       $_SESSION['loggedin'] = true;
-       header("location: Home.php");
-      }
-       }else {
-         $error = "Your Login Name or Password is invalid";
-      }
-
-      
-}
-
-   
-
-
-
+';}
 
 ?>
-<html>
-   
-   <head>
-      <title>Login Page</title>
-      
-   
-      
-   </head>
-   
-   <body >
-	
-      <div align="center">
-         <div class="register_box">
-            <div ><b>Login</b></div>
-				
-               
-               <form action = "" method = "post">
-                  <label>User name </label><br />
-
-                  <input type = "text" name = "username" class = "box"/><br />
-
-                  <label>Password </label><br />
-
-                  <input type = "password" name = "password" class = "box" /><br/>
-
-                  <input type = "submit" value = " Submit "/><br />
-
-               </form>
-               
-
-               <div><?php echo $error; ?></div><br/>
-
-
-               <div>
-
-
-			   <div style="margin: 20px;" >New user? </div>
-
-              <a style="border: solid; padding: 4px; width:180px;align-self: center;"  href = "register.php">Register now!</a>
-
-
-
-            
-            </div>   
-           </div>
-				
-         
-			
-      </div>
-<?php   include 'footer.php' ?>
