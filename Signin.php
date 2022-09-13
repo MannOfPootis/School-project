@@ -39,6 +39,7 @@ echo "hello world";
 First Name: <input type="text" name="first_name"><br>
 Last Name:  <input type="text" name="last_name"><br>
 Username:   <input type="text" name="username"><br>
+I am a: <input type="select" name="claim"><br>
 Password:   <input type="password" name="password"id ="password" onchange="checkok()"><br>
 Password again<input type = "password" name="password2" id ="password1" onchange="checkok()">
     </b>
