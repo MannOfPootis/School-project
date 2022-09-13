@@ -41,7 +41,7 @@ body {
   
    color:#515B3A;
    font-size: 25px;
-   background-color:  B6F1F6;
+   background-color:  #DBF8FA;
 }
 .nav {
    flex-direction: row;
@@ -258,14 +258,14 @@ background: rgba(0,0, 0, .5);
 
    align-self: left;
    width: 20%;
-   background-color:  B6F1F6;
+   background-color:  #DBF8FA;
    height: 450PX;
    border-style: solid;
 }
 .home_right{
 
    align-self: right;
-   background-color:  B6F1F6;
+   background-color:  #DBF8FA;
     width: 20%;
    height: 450PX;
    border-style: solid;
@@ -308,7 +308,7 @@ background: rgba(0,0, 0, .5);
 
    align-self: left;
    width: 20%;
-   background-color:  B6F1F6;
+   background-color:  #DBF8FA;
    height: 450PX;
    border-style: solid;
 }
@@ -316,7 +316,7 @@ background: rgba(0,0, 0, .5);
 .quizz_right{
 
    align-self: right;
-   background-color:  B6F1F6;
+   background-color:  #DBF8FA;
     width:70%;
    height: 450PX;
    border-style: solid;
@@ -344,7 +344,7 @@ background: rgba(0,0, 0, .5);
    flex-direction: column;
    
 
-   background-color:  B6F1F6;
+   background-color:  #DBF8FA;
   
  
 }
