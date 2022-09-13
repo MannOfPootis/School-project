@@ -1,5 +1,12 @@
 
+<?php
+include "config.php";
+echo "hello world";
 
+
+
+
+?>
 <html>
     <head>
         <style>
@@ -24,17 +31,13 @@
             //document.getElementById("problem").innerHTML=password.value;
         }
     </script>
-    <?php
-    include "config.php";
-    echo "hello world";
-
-
-
-
-    ?>
+<div class = "trekeneratorBackground">
+    <div class="window2">
         <h1>Here you will sign up to our web page</h1><br>
 
 <form action="" method="post"><b>
+First Name: <input type="text" name="first_name"><br>
+Last Name:  <input type="text" name="last_name"><br>
 Username:   <input type="text" name="username"><br>
 Password:   <input type="password" name="password"id ="password" onchange="checkok()"><br>
 Password again<input type = "password" name="password2" id ="password1" onchange="checkok()">
@@ -42,7 +45,8 @@ Password again<input type = "password" name="password2" id ="password1" onchange
 <input type="submit" >
 <div id ="problem"></div>
 <?php
-            if(
+            if(array_key_exists( "first_name",$_POST)&&
+            array_key_exists( "last_name",$_POST)&&
             array_key_exists( "username",$_POST)&&
             array_key_exists( "password",$_POST)&&
             array_key_exists( "password2",$_POST)
@@ -61,8 +65,8 @@ Password again<input type = "password" name="password2" id ="password1" onchange
                 }
                 else
                 {
-                $sql = "INSERT INTO user(username   ,password)
-                values('$username','$password')";
+                $sql = "INSERT INTO account(first_name  ,last_name  ,username   ,password)
+                values('$firstname','$lastname','$username','$password')";
                 if ($conn->query($sql)) {
                     echo "<h1 style ='color: green;'>New record created successfully</h1>";
                   } else {

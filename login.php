@@ -14,6 +14,9 @@ if(
         {
 
             $_SESSION["username"]=$username;
+            if(sqli_takefirst("SELECT permission from user where username = '$username'")==2){
+              header("location:http://localhost/school-project/Admin/AdminUI.php");
+            }
             header('Refresh: 0');
 
         }
@@ -42,6 +45,8 @@ if(
 
 
 <?php
+$username =$_SESSION["username"];
+echo"$username";
 if( !array_key_exists( "username",$_SESSION))
 {
 echo'

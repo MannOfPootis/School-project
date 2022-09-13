@@ -3,8 +3,13 @@
 include "Methods.php";
 include "config.php";
 include "login.php";
-include "Signin.php";
 
+//include "Signin.php";
+
+if(array_key_exists('username',$_SESSION ))
+{
+  echo'<a href="http://localhost/school-project/Logout.php">logout</a>';
+}
 
 ?>
-<div>ligma success</div> a
+<a href="http://localhost/school-project/Signin.php">afzufjsefjatzserjgha</a>
