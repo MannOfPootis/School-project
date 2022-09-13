@@ -1,6 +1,6 @@
  <h1> this is the login form </h1>
  <?php
- session_start();
+ //session_start();
 if(
     array_key_exists( "username",$_POST)&&
     array_key_exists( "password",$_POST)
