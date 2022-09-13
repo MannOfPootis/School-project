@@ -1,4 +1,4 @@
- 
+
  <?php
  include "Header.php";
 
@@ -30,7 +30,7 @@ if(
 ?>
 <div class="main_box">
 
-	
+
 
 
 
@@ -44,8 +44,8 @@ if(
 
 
 <?php
-$username = $_SESSION["username"];
-echo"$username";
+/*$username = $_SESSION["username"];
+echo"$username";*/
 if( !array_key_exists( "username",$_SESSION))
 {
 echo'
