@@ -9,9 +9,9 @@ password "9X/hjpuw[o..bjJ."
 session_start();
 include "../Methods.php";
 
-if(sqli_takefirst("")){
+/*if(sqli_takefirst("")){
 
-}
+}*/
 $servername = "localhost";
 $username = "admin";//ime računa
 $password = "9X/hjpuw[o..bjJ.";// geslo

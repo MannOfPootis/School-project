@@ -36,19 +36,24 @@ echo "hello world";
         <h1>Here you will sign up to our web page</h1><br>
 
 <form action="" method="post"><b>
-First Name: <input type="text" name="first_name"><br>
-Last Name:  <input type="text" name="last_name"><br>
+First Name: <input type="text" name="name"><br>
+Last Name:  <input type="text" name="surname"><br>
 Username:   <input type="text" name="username"><br>
-I am a: <input type="select" name="claim"><br>
+I am a: <select name="claim">
+    <option value="1">Pupil</option>
+    <option value="2">Proffessor</option>
+    <option value = "3">Admin</option>
+</select><br>
 Password:   <input type="password" name="password"id ="password" onchange="checkok()"><br>
 Password again<input type = "password" name="password2" id ="password1" onchange="checkok()">
     </b>
 <input type="submit" >
 <div id ="problem"></div>
 <?php
-            if(array_key_exists( "first_name",$_POST)&&
-            array_key_exists( "last_name",$_POST)&&
+            if(array_key_exists( "name",$_POST)&&
+            array_key_exists( "surname",$_POST)&&
             array_key_exists( "username",$_POST)&&
+            array_key_exists( "claim",$_POST)&&
             array_key_exists( "password",$_POST)&&
             array_key_exists( "password2",$_POST)
 
@@ -56,18 +61,20 @@ Password again<input type = "password" name="password2" id ="password1" onchange
             ){
             if($_POST["password"]==$_POST["password2"])
             {
-                $firstname=$_POST["first_name"];
-                $lastname=$_POST["last_name"];
+                $firstname=$_POST["name"];
+                $lastname=$_POST["surname"];
                 $username=$_POST["username"];
+                $claim=$_POST["claim"];
                 $password=password_hash($_POST["password"],PASSWORD_DEFAULT);
-                if($conn->query("select username from account where username='$username'")->num_rows>0)
+                
+                if($conn->query("select username from user where username='$username'")->num_rows>0)
                 {
                     echo "<h1 style ='color: red;'>Username already taken</h1>";
                 }
                 else
                 {
-                $sql = "INSERT INTO account(first_name  ,last_name  ,username   ,password)
-                values('$firstname','$lastname','$username','$password')";
+                $sql = "INSERT INTO user(name  ,surname ,username,claim   ,password)
+                values('$firstname','$lastname','$username','$claim','$password')";
                 if ($conn->query($sql)) {
                     echo "<h1 style ='color: green;'>New record created successfully</h1>";
                   } else {
