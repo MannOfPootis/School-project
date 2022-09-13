@@ -7,7 +7,7 @@ password "9X/hjpuw[o..bjJ."
 
 */
 session_start();
-
+//check login
 $servername = "localhost";
 $username = "admin";//ime računa
 $password = "9X/hjpuw[o..bjJ.";// geslo
