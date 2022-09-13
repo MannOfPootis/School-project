@@ -1,6 +1,7 @@
 
 	<!DOCTYPE html>
-	<?php include'config.php';
+	<?php 	include'config.php';
+			include'Methods.php';
 	$uri = $_SERVER['REQUEST_URI'];
 	
 	
@@ -25,9 +26,9 @@
 
 		<div class ='nav'>
 			<a class="title" >QUIZENOMICON</a>
-			| <a class='avi' href='home.php'>Home</a> 			
+			| <a class='avi' href='MainPage.php'>Home</a> 			
 			| <a class="avi" href="Quizes.php">Quizes</a>
-			| <a class="avi" href="Login.php">Log in</a>
+			| <a class="avi" href="login.php">Log in</a>
 			| <a class="avi" href="Logout.php">Log out</a> 
 			| <a class="avi" href="Register.php">Register</a>
 			

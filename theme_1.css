@@ -1,0 +1,354 @@
+
+
+
+
+
+.boxy{
+  background-color:#e6ccb2 ;
+         border-style: solid;
+         font-size: 18px;
+         border-width: 2px;
+         border-color: #515B3A;
+      
+         color:4B4B4B;
+         
+         text-align: center;
+}
+
+.bubble{
+   background-color:#515B3A;
+   border: 3 solid #515B3A;
+   border-radius: 20px;
+   border-left: 5px;
+   border-right: 5px;
+   
+}    
+.LoginB{
+   text-align:center;
+   background-color:#515B3A;
+   width: 260px;
+   margin: Auto;
+   
+}
+.HC{
+   margin-bottom:100px;
+   margin-top:100px;
+}
+body {
+   display: flex;
+   align-content: center;
+   flex-direction: column;
+  
+   color:#515B3A;
+   font-size: 25px;
+   background-color:  #E6FAFC;
+}
+.nav {
+   flex-direction: row;
+   color: #515B3A;
+   
+   font-size: 30px;
+   margin:20px;
+   margin-left: 100px;
+   margin-right: 100px;
+   text-align: center;
+
+}
+.box{
+   font-size: 10px;
+}
+
+
+
+input {
+         margin: 4px;
+         background-color:#e6ccb2;
+         font-size: 30px;
+         border-style: solid;
+         border-width: 2px;
+         border-color: #515B3A;
+        
+         color:#515B3A;
+         font-family:"MP";
+         cursor: pointer;
+}
+
+button{
+         background-color:#e6ccb2 ;
+         font-size: 30px;
+         border-style: solid;
+         border-width: 2px;
+         border-color: #515B3A;
+         width: 300px;
+         color:#515B3A;
+         font-family:"MP";
+         cursor: pointer;
+}
+input[type="text"]{
+         background-color:#e6ccb2 ;
+         border-style: solid;
+         font-size: 18px;
+         border-width: 2px;
+   
+         text-align: center;
+}        
+input[type="password"]{
+         background-color:#e6ccb2 ;
+         border-style: solid;
+         font-size: 18px;
+         border-width: 2px;
+         border-color: #515B3A;
+       
+         
+         text-align: center;
+         
+}
+input[type="text"]:focus{
+         background-color:rgba(255, 99, 71, 0) ;
+         border-style: solid;
+         font-size: 18px;
+         border-width: 2px;
+         border-color: #515B3A;
+        
+        
+         text-align: center;
+         
+}
+input[type="date"]{
+         background-color:#e6ccb2 ;
+         border-style: solid;
+         font-size: 18px;
+         border-width: 2px;
+         border-color: #515B3A;
+      
+         color:4B4B4B;
+         
+         text-align: center;
+}
+input[type="number"]{
+         background-color:#e6ccb2 ;
+         border-style: solid;
+         font-size: 18px;
+         border-width: 2px;
+         border-color: #515B3A;
+       
+         color:4B4B4B;
+         font-family:"MP";
+         text-align: center;
+}
+
+a.avi:link {
+   color: #515B3A;
+   font-family:"BH";
+   text-decoration-line: none!important;
+   text-decoration-line: none;
+}
+a.avi:visited {
+   color: #515B3A;
+   font-family:"BH";
+   text-decoration: none!important;
+   text-decoration-line: none;
+}
+a.avi:hover {
+   color: #515B3A;
+   font-family:"BH";
+   text-decoration: none!important;
+   text-decoration-line: none;
+}
+a.avi:active {
+   color: #515B3A;
+   font-family:"BH";
+   text-decoration: none!important;
+   text-decoration-line: none;
+}
+a:link {
+   color: #515B3A;
+   font-family:"BH";
+   text-decoration-line: none!important;
+   text-decoration-line: none;
+}
+a:visited {
+   color: #515B3A;
+   font-family:"BH";
+   text-decoration: none!important;
+   text-decoration-line: none;
+}
+a:hover {
+   color: #515B3A;
+   font-family:"BH";
+   text-decoration: none!important;
+   text-decoration-line: none;
+}
+a:active {
+   color: #515B3A;
+   font-family:"BH";
+   text-decoration: none!important;
+   text-decoration-line: none;
+}
+.title {
+   color: #515B3A;
+   font-size: 50px;
+   margin-right: 10px;
+   font-style: bold;
+
+}
+h2 {
+   color: #515B3A;
+   font-size: 40px;
+   margin: auto;
+   font-family:"BH";
+}
+hr.main {
+   border:3px solid #515B3A;
+   bacground-color:#515B3A ;
+}
+hr {
+   border:6px solid #515B3A;
+}
+hr.RL{
+   border:6px solid #515B3A;
+   width: 200px;
+}
+.boioL {
+   float:center;
+   text-align:center;
+
+}
+#submit{
+   color:white;
+   background-color:#B19ACA;
+}
+.main_box
+{
+ 
+ background-image: url("parchment.jpg");
+ align-content: center;
+ width: 90%;
+ padding-top: 50px;
+ padding-bottom: 50px;
+  height:450px;
+}
+
+
+   .register_box
+{
+   border-style: groove;
+   align-content: center;
+
+ text-align: center;
+ background-image: url("parchment.jpg");
+background: rgba(0,0, 0, .5);
+
+ width: 60%;
+ padding-top: 10px;
+ 
+ padding-bottom: 10px;
+ height:450px;
+}
+.home{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-content: center;
+   align-items: center;
+   justify-content: safe center;
+}
+
+.home_left{
+
+   align-self: left;
+   width: 20%;
+   background-color:  #E6FAFC;
+   height: 450PX;
+   border-style: solid;
+}
+.home_right{
+
+   align-self: right;
+   background-color:  #E6FAFC;
+    width: 20%;
+   height: 450PX;
+   border-style: solid;
+   display: flex;
+   flex-direction: column;
+}
+
+.home_mid{
+   display: flex; 
+   flex-direction: column;
+   align-self: top ;
+    width: 50%;
+}
+
+.home_left > div{
+
+   border-bottom-style: solid;
+   border-width: 2px;
+
+
+}
+
+.divr{
+
+   border-style: solid;
+   border-width: 1px;
+
+
+}
+.quizz{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-content: center;
+   align-items: center;
+   justify-content: safe center;
+}
+
+.quizz_left{
+
+   align-self: left;
+   width: 20%;
+   background-color:  #E6FAFC;
+   height: 450PX;
+   border-style: solid;
+}
+
+.quizz_right{
+
+   align-self: right;
+   background-color:  #E6FAFC;
+    width:70%;
+   height: 450PX;
+   border-style: solid;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.quizz_right > div {
+
+
+}
+
+.answer_boxs{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+
+
+
+.question{
+   border-style: solid;
+
+}
+
+.quizz_left > form{
+   display: flex;
+   flex-direction: column;
+   
+
+   background-color:  #E6FAFC;
+  
+ 
+}

@@ -1,6 +1,7 @@
- <h1> this is the login form </h1>
+ 
  <?php
- //session_start();
+ include "Header.php";
+
 if(
     array_key_exists( "username",$_POST)&&
     array_key_exists( "password",$_POST)
@@ -24,8 +25,21 @@ if(
       }
   }
 ?>
+<div class="main_box">
 
-<br>
+	
+
+
+<h1> this is the login form </h1>
+
+
+
+</div>
+
+
+
+
+
 
 <?php
 if( !array_key_exists( "username",$_SESSION))
@@ -42,5 +56,5 @@ password:<br>   <input type="password" name="password"><br>
 </h2>
 
 ';}
-
+include "footer.php";
 ?>
