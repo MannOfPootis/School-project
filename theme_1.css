@@ -4,7 +4,7 @@
 
 
 .boxy{
-  background-color:#20BF55 ;
+  background-color:#51E181 ;
          border-style: solid;
          font-size: 18px;
          border-width: 2px;
@@ -46,14 +46,45 @@ body {
 .nav {
    flex-direction: row;
    color: #515B3A;
-   
+   border: #51E181;
+   background-color: #51E181;
    font-size: 30px;
-   margin:20px;
+   
    margin-left: 100px;
    margin-right: 100px;
    text-align: center;
 
 }
+.nav-foot {
+   flex-direction: row;
+   color: #515B3A;
+   
+   font-size: 30px;
+
+   margin-left: 100px;
+   margin-right: 100px;
+   text-align: center;
+
+}
+
+.footer-info > a {
+
+   margin: 10px;
+   margin-top: 0;
+}
+.footer-info {
+   display: flex;
+   flex-direction: row;
+   color: #0E0F19;
+   
+   font-size: 11px;
+   
+   margin-left: 100px;
+   margin-right: 100px;
+   text-align: left;
+
+}
+
 .box{
    font-size: 10px;
 }
@@ -62,7 +93,7 @@ body {
 
 input {
          margin: 4px;
-         background-color:#20BF55;
+         background-color:#51E181;
          font-size: 30px;
          border-style: solid;
          border-width: 2px;
@@ -74,7 +105,7 @@ input {
 }
 
 button{
-         background-color:#20BF55 ;
+         background-color:#51E181 ;
          font-size: 30px;
          border-style: solid;
          border-width: 2px;
@@ -85,7 +116,7 @@ button{
          cursor: pointer;
 }
 input[type="text"]{
-         background-color:#20BF55 ;
+         background-color:#51E181 ;
          border-style: solid;
          font-size: 18px;
          border-width: 2px;
@@ -93,7 +124,7 @@ input[type="text"]{
          text-align: center;
 }        
 input[type="password"]{
-         background-color:#20BF55 ;
+         background-color:#51E181 ;
          border-style: solid;
          font-size: 18px;
          border-width: 2px;
@@ -115,7 +146,7 @@ input[type="text"]:focus{
          
 }
 input[type="date"]{
-         background-color:#20BF55 ;
+         background-color:#51E181 ;
          border-style: solid;
          font-size: 18px;
          border-width: 2px;
@@ -126,7 +157,7 @@ input[type="date"]{
          text-align: center;
 }
 input[type="number"]{
-         background-color:#20BF55 ;
+         background-color:#51E181 ;
          border-style: solid;
          font-size: 18px;
          border-width: 2px;

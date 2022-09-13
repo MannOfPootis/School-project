@@ -16,7 +16,7 @@
 
 
 		<link href='theme_1.css' rel='stylesheet'>
- 		<title>QUIZENOMICON</title>
+ 		
 	</head>
 
 	<body>
@@ -25,9 +25,8 @@
 		
 
 		<div class ='nav'>
-			<a class="title" >QUIZENOMICON</a>
-			| <a class='avi' href='MainPage.php'>Home</a> 			
-			| <a class="avi" href="Quizes.php">Quizes</a>
+			<a class="title" >    </a><br>
+			<a class='avi' href='MainPage.php'>Home</a> 			
 			| <a class="avi" href="login.php">Log in</a>
 			| <a class="avi" href="Logout.php">Log out</a> 
 			| <a class="avi" href="Register.php">Register</a>
