@@ -33,11 +33,10 @@ if(
 	
 
 
-<h1> this is the login form </h1>
 
 
 
-</div>
+
 
 
 
@@ -45,21 +44,21 @@ if(
 
 
 <?php
-$username =$_SESSION["username"];
+$username = $_SESSION["username"];
 echo"$username";
 if( !array_key_exists( "username",$_SESSION))
 {
 echo'
 <form action="" method="post">
 
-Please log in<br><br>
-<div class="borderp">
+ <h1>Please log in </h1><br>
+<h2>
 username:<br> <input type="text" name="username"><br>
 password:<br>   <input type="password" name="password"><br>
 <input type="submit" value="login">
 </form>
 </h2>
-
+</div>
 ';}
 include "footer.php";
 ?>
