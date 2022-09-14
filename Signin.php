@@ -56,11 +56,11 @@ Password again<input type = "password" name="password2" id ="password1" onchange
             array_key_exists( "claim",$_POST)&&
             array_key_exists( "password",$_POST)&&
             array_key_exists( "password2",$_POST)
-            isser($_POST["name"])&&
-            isser($_POST["surname"])&&
-            isser($_POST["username"])&&
-            isser($_POST["claim"])&&
-            isser($_POST["password2"])
+            isset($_POST["name"])&&
+            isset($_POST["surname"])&&
+            isset($_POST["username"])&&
+            isset($_POST["claim"])&&
+            isset($_POST["password2"])
 
         
 
