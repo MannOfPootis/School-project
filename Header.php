@@ -1,11 +1,8 @@
 
 	<!DOCTYPE html>
-	<?php 	include'config.php';
-			include'Methods.php';
-	$uri = $_SERVER['REQUEST_URI'];
-	
-	
-	
+	<?php 
+		include "config.php";
+		include "Methods.php";
 	
 	 ?>
 	<html>

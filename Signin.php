@@ -1,19 +1,17 @@
 
 <?php
-include "config.php";
-echo "hello world";
+include "Header.php";
+
 
 
 
 
 ?>
-<html>
-    <head>
-        <style>
 
-        </style>
-    </head>
-<body>
+
+
+
+
     <script type="text/javascript">
         //function submitcheck
         function checkok(){
@@ -31,24 +29,62 @@ echo "hello world";
             //document.getElementById("problem").innerHTML=password.value;
         }
     </script>
-<div class = "trekeneratorBackground">
-    <div class="window2">
-        <h1>Here you will sign up to our web page</h1><br>
 
-<form action="" method="post"><b>
-First Name: <input type="text" name="name"><br>
+
+
+
+<div class = "trekeneratorBackground">
+
+
+    <div class="window2">
+
+
+        <h1 style=" margin: 0px" >Here you will sign up to our web page</h1>
+
+<form action="" method="post"  style="  
+   background-color:#51f190 ;
+   font-size: 30px;
+   border-style: solid;
+   border-width: 2px;
+   border-color: #515B3A;
+   width: 300px;
+   color:#515B3A;
+   cursor: pointer;
+   padding: 5px;
+   margin: 5px;
+   "> 
+
+
+First Name:  <input type="text" name="name"><br>
+
 Last Name:  <input type="text" name="surname"><br>
+
 Username:   <input type="text" name="username"><br>
+
 I am a: <select name="claim">
-    <option value="1">Pupil</option>
-    <option value="2">Proffessor</option>
-    <option value = "3">Admin</option>
-</select><br>
+
+
+        <option value="1">Pupil</option>
+
+        <option value="2">Proffessor</option>
+
+        <option value = "3">Admin</option>
+
+        </select><br>
+
 Password:   <input type="password" name="password"id ="password" onchange="checkok()"><br>
-Password again<input type = "password" name="password2" id ="password1" onchange="checkok()">
-    </b>
+
+
+Password again<input type = "password" name="password2" id ="password1" onchange="checkok()"></br>
+
+
+
 <input type="submit" >
+
+
 <div id ="problem"></div>
+
+
 <?php
             if(array_key_exists( "name",$_POST)&&
             array_key_exists( "surname",$_POST)&&
@@ -91,8 +127,8 @@ Password again<input type = "password" name="password2" id ="password1" onchange
                 $conn->close();
             }
         }
+
+        include "footer.php";
         ?>
-</div>
 </form>
-</body>
-</html>
+
