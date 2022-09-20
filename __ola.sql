@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 13. sep 2022 ob 11.16
+-- Čas nastanka: 20. sep 2022 ob 10.37
 -- Različica strežnika: 10.4.20-MariaDB
 -- Različica PHP: 8.0.9
 
@@ -24,15 +24,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktura tabele `atends`
+--
+
+CREATE TABLE `atends` (
+  `id` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
+  `claim` int(11) NOT NULL,
+  `permission` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabele `class`
 --
 
 CREATE TABLE `class` (
   `id` int(11) NOT NULL,
-  `name` int(11) NOT NULL,
-  `schedule` int(11) NOT NULL,
-  `homeroom` int(11) NOT NULL
+  `name` varchar(100) NOT NULL,
+  `schedule` int(11) DEFAULT NULL,
+  `homeroom` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Odloži podatke za tabelo `class`
+--
+
+INSERT INTO `class` (`id`, `name`, `schedule`, `homeroom`) VALUES
+(3, 'R2A', 0, 10),
+(4, 'sdaesea', 0, 13);
 
 -- --------------------------------------------------------
 
@@ -55,26 +76,31 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `permission`, `Claim`, `name`, `surname`, `ID`) VALUES
-('123', '$2y$10$tt.N5NJPWIFJ8l4Hgm6NZew21FG0Mxdrz6zf5EepmqZyvunBmeXNS', 0, 0, '123', '123', 1),
 ('Admin', '$2y$10$nj5a6eRoqus4usRHiTHTFOG/PzjJ8DSu/HmITSv5NuM01GQeJAgJW', 3, 0, 'Admin', 'Admin', 2),
-('123', '$2y$10$pHOADwPkyftuWOWf9giq2OmWZHQFIYuCgHZdn7tN/eZjPeBWmru7u', 0, 0, '', '', 3),
 ('123', '$2y$10$Js6u04Ivaui46dTSQZdcYett4whUkEeiNa1t7jKJi4bmA0ERU4ZGi', 0, 0, '', '', 4),
-('lll', '$2y$10$IlvDOAsBMC6N6y2HOP1p0OdlBHS5NRveejo7nKguO6POBYPgfH7I2', 3, 0, '', '', 5),
 ('lll', '$2y$10$tfyWFB90P/hVLq9vf3y4YehD5ZLjcEMaRsfB0xtc9ZRINy6edaq7S', 0, 0, '', '', 6),
-('asdaeasexewe', '$2y$10$xIE5e95rioTs31vrQmOTOuZF2ZSpuZxQf79ysbbh5bPPpKplDHrd6', 0, 3, 'sdadawee', 'asdaweae', 7),
-('konj', '$2y$10$jpIWZE1qKBtij/OiGRG79eovS0anYSbCDP8suCVQX5JholcoGO4ja', 0, 2, 'Steve', 'jon', 8),
-('yey', '$2y$10$gy6KrMQPhTpfGZfmUWGtB.FKfRzlHBc/iGeGN3J825zr8PnjGcGM6', 0, 1, 'gae', 'gey', 9),
-('gey', '$2y$10$Vp8Yd4lSowvv4kreLO1ZR.4WDJgqyfbF82p/sZf26t8B73.JWWolC', 0, 2, 'gey', 'gey', 10);
+('konj', '$2y$10$jpIWZE1qKBtij/OiGRG79eovS0anYSbCDP8suCVQX5JholcoGO4ja', 3, 2, 'Steve', 'jon', 8),
+('gey', '$2y$10$Vp8Yd4lSowvv4kreLO1ZR.4WDJgqyfbF82p/sZf26t8B73.JWWolC', 2, 2, 'gey', 'gey', 10),
+('111', '$2y$10$mKCjNfpA3nq24xYXhO0BO.dSm7lKLeee2tb3qhfndcdb/f2p4TMAW', 3, 2, '111', '111', 11),
+('333', '$2y$10$ikrERwp7Ic5fe3bqnEQZye0PM5Qv7Cz2Z2iQp3sXY8aSMDX0k/q8K', 2, 2, '333', '333', 13),
+('444', '$2y$10$xRbpDFpd8IgR9.4CgNPrL./dER/mpmYMZrDYdS8VuqO2ZCYkgDujq', 1, 1, '444', '444', 14);
 
 --
 -- Indeksi zavrženih tabel
 --
 
 --
+-- Indeksi tabele `atends`
+--
+ALTER TABLE `atends`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeksi tabele `class`
 --
 ALTER TABLE `class`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `homeroom` (`homeroom`);
 
 --
 -- Indeksi tabele `user`
@@ -87,16 +113,32 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT tabele `atends`
+--
+ALTER TABLE `atends`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT tabele `class`
 --
 ALTER TABLE `class`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT tabele `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- Omejitve tabel za povzetek stanja
+--
+
+--
+-- Omejitve za tabelo `class`
+--
+ALTER TABLE `class`
+  ADD CONSTRAINT `class_ibfk_1` FOREIGN KEY (`homeroom`) REFERENCES `user` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
