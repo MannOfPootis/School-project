@@ -12,6 +12,18 @@ function get_session_user(){
     return $result->fetch_assoc();
 
 }
+/*function edit_sql(,$atrName, $tableName, $atrValue,$IDColumn,$IDColumnValue){
+    $copyEntry=$conn->query("select * from $TableName where $IDColumn = '$IDColumnValue'");
+
+    while($entry=$copyEntry->fetch_assoc()){
+        $conn->query("DELETE from $tablename where $IDColumn = '$IDColumnValue'");
+        $valuesName="";
+        $values="";
+        foreach($copyEntry as $name => $answer){
+        $conn->query("INSERT into $tablename($valuesName) values($values) ");
+        }
+    }
+}*/
 
 
 

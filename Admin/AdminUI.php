@@ -7,12 +7,16 @@ include 'AdminConfig.php';
 foreach($_POST as $name => $answer)
 {
     echo "<h1>$name $answer</h1> <br> ";
+
     switch ($answer)
     {
         case "null":
             break;
-        case "yes":
-            $conn->query("UPDATE from user set permission =claim where username = '$name'");
+        case "yes": 
+            if($conn->query("UPDATE user SET permission = claim WHERE username = '$name'"))
+            {
+                echo"good";
+            };
             break;
         case "no":
             $conn->query("DELETE from user where username = '$name'");
@@ -65,4 +69,6 @@ while ($allDifArray=mysqli_fetch_array($allDif)){
     <select value="no" >no</select>
     <select value="yes" >esy</select>
 </form>-->
-<h1>you are now the admin</h1>
+<h1>you are now the admin please don't fuck something up</h1>
+<a href="http://localhost/school-project/Admin/CreateClass.php" >create class</a>
+<?php //include "CreateClass.php";?>
