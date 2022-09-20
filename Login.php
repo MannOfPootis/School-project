@@ -15,17 +15,27 @@ if(
 
             $_SESSION["username"]=$username;
             $_SESSION["password"]=$password;
-            if(sqli_takefirst($conn->query("SELECT permission from user where username = '$username'"))==3){
+            $perm=sqli_takefirst($conn->query("SELECT permission from user where username = '$username'"));
+            switch ($perm){
+
+            
+            case 3:{
               header("location:http://localhost/school-project/Admin/AdminUI.php");
+              break;
             }
+            case 2:
+              {
+                header("location:http://localhost/school-project/Prof/ProfUI.php");
+                break
+              }
+            
+          }
             header('Refresh: 0');
 
         }
         else{
           echo "<p>bad login boyo</p>";
           session_destroy();
-
-
       }
   }
 ?>

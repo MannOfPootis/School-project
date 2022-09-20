@@ -28,6 +28,16 @@ include "Header.php";
             }
             //document.getElementById("problem").innerHTML=password.value;
         }
+        /*function checkPupil()
+        {
+            document.write("aids");
+            choice=document.getElementByName("claim");
+            choice.innerHTML="sdsda"
+            if(choice.value=="1"){
+                document.write("aids");
+
+            }
+        }*/
     </script>
 
 
@@ -61,14 +71,17 @@ Last Name:  <input type="text" name="surname"><br>
 
 Username:   <input type="text" name="username"><br>
 
-I am a: <select name="claim">
+
+I am a: <select name="claim"  >
 
 
-        <option value="1">Pupil</option>
+        <option onchange="checkPupil()" value="1">Pupil</option>
 
-        <option value="2">Proffessor</option>
+        <option onchange="checkPupil()" value="2">Proffessor</option>
 
-        <option value = "3">Admin</option>
+        <option onchange="checkPupil()" value = "3">Admin</option>
+
+        
 
         </select><br>
 
@@ -80,6 +93,12 @@ Password again<input type = "password" name="password2" id ="password1" onchange
 
 
 <input type="submit" >
+
+<script>
+            
+            
+
+        </script>
 
 
 <div id ="problem"></div>
