@@ -14,6 +14,7 @@ if(
         {
 
             $_SESSION["username"]=$username;
+            $_SESSION["password"]=$password;
             if(sqli_takefirst($conn->query("SELECT permission from user where username = '$username'"))==3){
               header("location:http://localhost/school-project/Admin/AdminUI.php");
             }

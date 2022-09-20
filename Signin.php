@@ -55,7 +55,7 @@ Password again<input type = "password" name="password2" id ="password1" onchange
             array_key_exists( "username",$_POST)&&
             array_key_exists( "claim",$_POST)&&
             array_key_exists( "password",$_POST)&&
-            array_key_exists( "password2",$_POST)
+            array_key_exists( "password2",$_POST)&&
             isset($_POST["name"])&&
             isset($_POST["surname"])&&
             isset($_POST["username"])&&
