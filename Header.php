@@ -22,7 +22,7 @@
 		
 
 		<div class ='nav'>
-			<a class="title" >    </a><br>
+			<a class="title" >  EviLWeeb  </a><br>
 			<a class='avi' href='MainPage.php'>Home</a> 			
 			| <a class="avi" href="login.php">Log in</a>
 			| <a class="avi" href="Logout.php">Log out</a> 

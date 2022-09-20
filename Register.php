@@ -39,7 +39,7 @@ include "Header.php";
     <div class="window2">
 
 
-        <h1 style=" margin: 0px" >Here you will sign up to our web page</h1>
+        <h1 style=" margin: 0px" >Register your school account here</h1>
 
 <form action="" method="post"  style="  
    background-color:#51f190 ;
@@ -61,7 +61,8 @@ Last Name:  <input type="text" name="surname"><br>
 
 Username:   <input type="text" name="username"><br>
 
-I am a: <select name="claim">
+My role:<br>
+ <select name="claim" id="nname">
 
 
         <option value="1">Pupil</option>

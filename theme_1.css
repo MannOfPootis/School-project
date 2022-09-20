@@ -58,8 +58,7 @@ body {
    background-color: #51E181;
    font-size: 30px;
    
-   margin-left: 100px;
-   margin-right: 100px;
+   
    text-align: center;
 
 }
@@ -386,3 +385,19 @@ background: rgba(0,0, 0, .5);
   
  
 }
+
+#nname option {
+   background-color: #DBF8FA;
+   }
+#nname {
+   background: transparent;
+   height: 26px;
+   background-color:#51E181 ;
+   border-style: solid;
+   font-size: 18px;
+   border-width: 2px;
+   color:#515B3A;
+   text-align: center;
+      background-color: #51E181;
+ }
+   
