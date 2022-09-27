@@ -20,6 +20,8 @@ foreach($_POST as $name => $answer)
             break;
         case "no":
             $conn->query("DELETE from user where username = '$name'");
+            $idUser = sqli_takefirst($conn->query("select id from user where username = '$name'"));
+            $conn->query("DELETE from atends  where user = '$idUser'");
             break;
     }
 }

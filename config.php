@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+
 
 $servername = "localhost";
 $username = "noone";//ime računa
