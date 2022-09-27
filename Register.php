@@ -28,6 +28,16 @@ include "Header.php";
             }
             //document.getElementById("problem").innerHTML=password.value;
         }
+        /*function checkPupil()
+        {
+            document.write("aids");
+            choice=document.getElementByName("claim");
+            choice.innerHTML="sdsda"
+            if(choice.value=="1"){
+                document.write("aids");
+
+            }
+        }*/
     </script>
 
 
@@ -61,15 +71,22 @@ Last Name:  <input type="text" name="surname"><br>
 
 Username:   <input type="text" name="username"><br>
 
+<<<<<<< HEAD:Register.php
 My role:<br>
  <select name="claim" id="nname">
+=======
+
+I am a: <select name="claim"  >
+>>>>>>> 9d4949547f986f50734f9fc642c537a31eb5110c:Signin.php
 
 
-        <option value="1">Pupil</option>
+        <option onchange="checkPupil()" value="1">Pupil</option>
 
-        <option value="2">Proffessor</option>
+        <option onchange="checkPupil()" value="2">Proffessor</option>
 
-        <option value = "3">Admin</option>
+        <option onchange="checkPupil()" value = "3">Admin</option>
+
+        
 
         </select><br>
 
@@ -81,6 +98,12 @@ Password again<input type = "password" name="password2" id ="password1" onchange
 
 
 <input type="submit" >
+
+<script>
+            
+            
+
+        </script>
 
 
 <div id ="problem"></div>
