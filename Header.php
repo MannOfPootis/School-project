@@ -8,11 +8,13 @@
 	<html>
 
 	<head>
+	<link href='theme_1.css' rel='stylesheet'>
 
 
+	<script src="/javashit.js">
+    
 
-
-		<link href='theme_1.css' rel='stylesheet'>
+	</script>
  		
 	</head>
 
