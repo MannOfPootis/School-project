@@ -40,7 +40,7 @@
  			<div style="border-bottom-style: solid;"> YOUR TIMETABLE </div>
             <div class="info" style="text-align: center; width: 500px; height: 400px;">      
 
-              <img src="timetable.png" style="width= 30% " >    </img>
+              <img src="timetable.png"  >    </img>
 
             </div>
 			</form>

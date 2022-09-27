@@ -53,7 +53,7 @@ include "Header.php";
 
 
 
-<form action="" method="post"  style="
+<form action="http://localhost/School-project/Register-class.php" method="post"  style="
    background-color:#51f190 ;
 
    font-size: 30px;
@@ -79,33 +79,20 @@ Username:   <input type="text" name="username"><br>
 
 
 
-I am a: <select name="claim" style=" background-color: #51E181; height:26px; " >
+I am a: <select name="claim" style=" background-color: #51E181; height:26px; " onclick="class_check()"  id="selected" >
 
 
 
-        <option onchange="checkPupil()" value="1">Pupil</option>
+        <option  value="1" >Pupil</option>
 
-        <option onchange="checkPupil()" value="2">Proffessor</option>
+        <option  value="2">Proffessor</option>
 
-        <option onchange="checkPupil()" value = "3">Admin</option>
+        <option  value= "3">Admin</option>
 
 
 
         </select><br>
 
-
-I am in: <select name = "class" style=" background-color: #51E181; height:26px; ">
-          <?php
-              $classes = $conn->query("Select * from class");
-              WHILE($allClasses = mysqli_fetch_array($classes))
-              {
-                $className= $allClasses["name"];
-                $classID= $allClasses["id"];
-                echo"<option value = '$classID'>$className</option>";
-              }
-
-          ?>
-</select>
 
 
 Password:   <input type="password" name="password"id ="password" onchange="checkok()"><br>
@@ -151,6 +138,9 @@ Password again<input type = "password" name="password2" id ="password1" onchange
                 $lastname=$_POST["surname"];
                 $username=$_POST["username"];
                 $claim=$_POST["claim"];
+
+           
+                
                 $password=password_hash($_POST["password"],PASSWORD_DEFAULT);
 
                 if($conn->query("select username from user where username='$username'")->num_rows>0)
