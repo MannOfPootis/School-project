@@ -73,4 +73,5 @@ while ($allDifArray=mysqli_fetch_array($allDif)){
 </form>-->
 <h1>you are now the admin please don't fuck something up</h1>
 <a href="http://localhost/school-project/Admin/CreateClass.php" >create class</a>
+<a href="http://localhost/school-project/Admin/CreateSubject.php" >create subject</a>
 <?php //include "CreateClass.php";?>
