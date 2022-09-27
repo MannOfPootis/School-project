@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 27. sep 2022 ob 08.09
+-- Čas nastanka: 27. sep 2022 ob 10.54
 -- Različica strežnika: 10.4.20-MariaDB
 -- Različica PHP: 8.0.9
 
@@ -33,13 +33,6 @@ CREATE TABLE `atends` (
   `ID_class` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Odloži podatke za tabelo `atends`
---
-
-INSERT INTO `atends` (`id`, `user`, `ID_class`) VALUES
-(1, 19, 3);
-
 -- --------------------------------------------------------
 
 --
@@ -49,7 +42,7 @@ INSERT INTO `atends` (`id`, `user`, `ID_class`) VALUES
 CREATE TABLE `class` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `schedule` int(11) DEFAULT NULL,
+  `schedule` varchar(100) DEFAULT NULL,
   `homeroom` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -58,8 +51,19 @@ CREATE TABLE `class` (
 --
 
 INSERT INTO `class` (`id`, `name`, `schedule`, `homeroom`) VALUES
-(3, 'R2A', 0, 10),
-(4, 'sdaesea', 0, 13);
+(3, 'R2A', '0', 10),
+(4, 'sdaesea', '0', 13);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabele `subjects`
+--
+
+CREATE TABLE `subjects` (
+  `ID` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -89,12 +93,7 @@ INSERT INTO `user` (`username`, `password`, `permission`, `Claim`, `name`, `surn
 ('gey', '$2y$10$Vp8Yd4lSowvv4kreLO1ZR.4WDJgqyfbF82p/sZf26t8B73.JWWolC', 2, 2, 'gey', 'gey', 10),
 ('111', '$2y$10$mKCjNfpA3nq24xYXhO0BO.dSm7lKLeee2tb3qhfndcdb/f2p4TMAW', 3, 2, '111', '111', 11),
 ('333', '$2y$10$ikrERwp7Ic5fe3bqnEQZye0PM5Qv7Cz2Z2iQp3sXY8aSMDX0k/q8K', 2, 2, '333', '333', 13),
-('444', '$2y$10$xRbpDFpd8IgR9.4CgNPrL./dER/mpmYMZrDYdS8VuqO2ZCYkgDujq', 1, 1, '444', '444', 14),
-('brim', '$2y$10$XFqyfcp0cJVBx0UNrbcM1e4nmA25QtDOiGiD6Uk/mBW0VKPNSLQF.', 0, 1, 'joe', 'ligus', 15),
-('sd', '$2y$10$bVIVs.2z6GrELIODnkAvF.zOjO2f7jVVsFBtYFBNa8VMdlBSjiOi6', 0, 1, 'sds', 'sd', 16),
-('1', '$2y$10$qfStKTX.U4cpgyy.VvJ4SejRN7rdPcfmR1.TwowPGjPaDtUuxHNxe', 0, 1, '1', '1', 17),
-('2', '$2y$10$ACVsIHmPi0piNkrHJGuKGOvnMX768ALZbChbW1LYki.CDZJorlPYm', 0, 1, '2', '2', 18),
-('3', '$2y$10$/ZCN07gGURFfk.C088EsIO9gcbFo8YeBoZEIAt2wJN4diImPBvK0m', 0, 1, '3', '3', 19);
+('444', '$2y$10$xRbpDFpd8IgR9.4CgNPrL./dER/mpmYMZrDYdS8VuqO2ZCYkgDujq', 1, 1, '444', '444', 14);
 
 --
 -- Indeksi zavrženih tabel
@@ -116,6 +115,12 @@ ALTER TABLE `class`
   ADD KEY `homeroom` (`homeroom`);
 
 --
+-- Indeksi tabele `subjects`
+--
+ALTER TABLE `subjects`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indeksi tabele `user`
 --
 ALTER TABLE `user`
@@ -129,13 +134,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT tabele `atends`
 --
 ALTER TABLE `atends`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT tabele `class`
 --
 ALTER TABLE `class`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT tabele `subjects`
+--
+ALTER TABLE `subjects`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT tabele `user`
