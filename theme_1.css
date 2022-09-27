@@ -50,14 +50,15 @@ body {
    color:#515B3A;
    font-size: 25px;
    background-color:  #DBF8FA;
+   background-image: linear-gradient(to right,#51E181 ,#DBF8FA,#51E181  );
+ 
 }
 .nav {
    flex-direction: row;
    color: #515B3A;
    border: #51E181;
-   background-color: #51E181;
+  
    font-size: 30px;
-   
    
    text-align: center;
 
@@ -258,8 +259,8 @@ hr.RL{
 }
 .main_box
 {
- 
- background-image: url("parchment.jpg");
+  /* background-image: url("scc-back.jpg");*/
+
  align-content: center;
  width: 90%;
  padding-top: 50px;
@@ -400,4 +401,6 @@ background: rgba(0,0, 0, .5);
    text-align: center;
       background-color: #51E181;
  }
-   
+img {
+   width: 550px;
+}

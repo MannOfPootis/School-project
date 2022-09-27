@@ -64,8 +64,8 @@ echo'
 
  <h1>Please log in </h1><br>
 <h2>
-username:<br> <input type="text" name="username"><br>
-password:<br>   <input type="password" name="password"><br>
+Username:<br> <input type="text" name="username"><br>
+Password:<br>   <input type="password" name="password"><br>
 <input type="submit" value="login">
 </form>
 </h2>

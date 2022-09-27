@@ -1,3 +1,4 @@
+</div>
 </center>
 <div class="nav">
 <hr class="main">

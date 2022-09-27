@@ -52,7 +52,7 @@ include "Header.php";
         <h1 style=" margin: 0px" >Register your school account here</h1>
 
 <form action="" method="post"  style="  
-   background-color:#51f190 ;
+
    font-size: 30px;
    border-style: solid;
    border-width: 2px;
@@ -71,13 +71,13 @@ Last Name:  <input type="text" name="surname"><br>
 
 Username:   <input type="text" name="username"><br>
 
-<<<<<<< HEAD:Register.php
-My role:<br>
- <select name="claim" id="nname">
-=======
 
-I am a: <select name="claim"  >
->>>>>>> 9d4949547f986f50734f9fc642c537a31eb5110c:Signin.php
+
+
+
+
+I am a: <select name="claim" style=" background-color: #51E181; height:26px; " >
+
 
 
         <option onchange="checkPupil()" value="1">Pupil</option>

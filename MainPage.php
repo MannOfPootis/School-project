@@ -1,15 +1,9 @@
-<h1>ligma test</h1>
-<?php
-include "Methods.php";
-include "config.php";
-include "login.php";
+<?php include'header.php'  ?>
 
-//include "Signin.php";
+<div class="main_box">
 
-if(array_key_exists('username',$_SESSION ))
-{
-  echo'<a href="http://localhost/school-project/Logout.php">logout</a>';
-}
+	
+</div>
 
-?>
-<a href="http://localhost/school-project/Signin.php">afzufjsefjatzserjgha</a>
+
+<?php include 'footer.php' ?>
