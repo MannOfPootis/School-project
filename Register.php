@@ -51,7 +51,10 @@ include "Header.php";
 
         <h1 style=" margin: 0px" >Register your school account here</h1>
 
-<form action="" method="post"  style="  
+
+
+<form action="" method="post"  style="
+   background-color:#51f190 ;
 
    font-size: 30px;
    border-style: solid;
@@ -62,7 +65,7 @@ include "Header.php";
    cursor: pointer;
    padding: 5px;
    margin: 5px;
-   "> 
+   ">
 
 
 First Name:  <input type="text" name="name"><br>
@@ -86,9 +89,20 @@ I am a: <select name="claim" style=" background-color: #51E181; height:26px; " >
 
         <option onchange="checkPupil()" value = "3">Admin</option>
 
-        
+
 
         </select><br>
+        <select name = "class">
+          <?php
+              $classes = $conn->query("Select * from class");
+              WHILE($allClasses = mysqli_fetch_array($classes))
+              {
+                $className= $allClasses["name"];
+                $classID= $allClasses["id"];
+                echo"<option value = '$classID'>$className</option>";
+              }
+
+          ?>
 
 Password:   <input type="password" name="password"id ="password" onchange="checkok()"><br>
 
@@ -100,8 +114,8 @@ Password again<input type = "password" name="password2" id ="password1" onchange
 <input type="submit" >
 
 <script>
-            
-            
+
+
 
         </script>
 
@@ -120,9 +134,10 @@ Password again<input type = "password" name="password2" id ="password1" onchange
             isset($_POST["surname"])&&
             isset($_POST["username"])&&
             isset($_POST["claim"])&&
-            isset($_POST["password2"])
+            isset($_POST["password2"])&&
+            isset($_POST["class"])
 
-        
+
 
 
             ){
@@ -133,7 +148,7 @@ Password again<input type = "password" name="password2" id ="password1" onchange
                 $username=$_POST["username"];
                 $claim=$_POST["claim"];
                 $password=password_hash($_POST["password"],PASSWORD_DEFAULT);
-                
+
                 if($conn->query("select username from user where username='$username'")->num_rows>0)
                 {
                     echo "<h1 style ='color: red;'>Username already taken</h1>";
@@ -148,11 +163,20 @@ Password again<input type = "password" name="password2" id ="password1" onchange
                     echo "Error: " . $sql . "<br>" . $conn->error;
                   }
                 }
+                $idUser=sqli_takefirst( $conn->query("select ID from user where username='$username'"));
+                $idClass= $_POST["class"];
+                $sql="INSERT INTO Atends(user, id_class)
+                values('$idUser',$idClass )";
+                if ($conn->query($sql))
+                {
+                    echo "<h1 style ='color: green;'>New record created successfully</h1>";
+                  } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                  }
+                }
                 $conn->close();
-            }
         }
 
         include "footer.php";
         ?>
 </form>
-
