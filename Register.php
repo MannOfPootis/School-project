@@ -53,7 +53,7 @@ include "Header.php";
 
 
 
-<form action="http://localhost/School-project/Register-class.php" method="post"  style="
+<form action="" method="post"  style="
    background-color:#51f190 ;
 
    font-size: 30px;
@@ -126,12 +126,10 @@ Password again<input type = "password" name="password2" id ="password1" onchange
             isset($_POST["username"])&&
             isset($_POST["claim"])&&
             isset($_POST["password2"])&&
-            //isset($_POST["class"])
+            isset($_POST["class"])
 
-
-
-
-            ){
+            )
+            {
             if($_POST["password"]==$_POST["password2"])
             {
                 $firstname=$_POST["name"];
@@ -158,9 +156,7 @@ Password again<input type = "password" name="password2" id ="password1" onchange
                   }
                 }
                 $idUser=sqli_takefirst( $conn->query("select ID from user where username='$username'"));
-                
-                if(isset($_POST["class"])&& $claim =1){
-                    $idClass= $_POST["class"];
+                $idClass= $_POST["class"];
                 $sql="INSERT INTO Atends(user, id_class)
                 values('$idUser',$idClass )";
                 if ($conn->query($sql))
@@ -170,8 +166,6 @@ Password again<input type = "password" name="password2" id ="password1" onchange
                     echo "Error: " . $sql . "<br>" . $conn->error;
                   }
                 }
-                }
-                
                 $conn->close();
         }
 
