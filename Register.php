@@ -126,7 +126,7 @@ Password again<input type = "password" name="password2" id ="password1" onchange
             isset($_POST["username"])&&
             isset($_POST["claim"])&&
             isset($_POST["password2"])&&
-            isset($_POST["class"])
+            //isset($_POST["class"])
 
 
 
@@ -158,7 +158,9 @@ Password again<input type = "password" name="password2" id ="password1" onchange
                   }
                 }
                 $idUser=sqli_takefirst( $conn->query("select ID from user where username='$username'"));
-                $idClass= $_POST["class"];
+                
+                if(isset($_POST["class"])&& $claim =1){
+                    $idClass= $_POST["class"];
                 $sql="INSERT INTO Atends(user, id_class)
                 values('$idUser',$idClass )";
                 if ($conn->query($sql))
@@ -168,6 +170,8 @@ Password again<input type = "password" name="password2" id ="password1" onchange
                     echo "Error: " . $sql . "<br>" . $conn->error;
                   }
                 }
+                }
+                
                 $conn->close();
         }
 
