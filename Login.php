@@ -18,7 +18,7 @@ if(
             $perm=sqli_takefirst($conn->query("SELECT permission from user where username = '$username'"));
             switch ($perm){
 
-            
+
             case 3:{
               header("location:http://localhost/school-project/Admin/AdminUI.php");
               break;
@@ -26,9 +26,9 @@ if(
             case 2:
               {
                 header("location:http://localhost/school-project/Prof/ProfUI.php");
-                break
+                break;
               }
-            
+
           }
             header('Refresh: 0');
 
