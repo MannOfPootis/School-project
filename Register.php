@@ -92,7 +92,9 @@ I am a: <select name="claim" style=" background-color: #51E181; height:26px; " >
 
 
         </select><br>
-        <select name = "class">
+
+
+I am in: <select name = "class" style=" background-color: #51E181; height:26px; ">
           <?php
               $classes = $conn->query("Select * from class");
               WHILE($allClasses = mysqli_fetch_array($classes))
@@ -103,6 +105,8 @@ I am a: <select name="claim" style=" background-color: #51E181; height:26px; " >
               }
 
           ?>
+</select>
+
 
 Password:   <input type="password" name="password"id ="password" onchange="checkok()"><br>
 
