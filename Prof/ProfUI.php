@@ -119,10 +119,7 @@ include "ProfConfig.php";
 you are the homeroom teacher of <?php
 
 $profId =  sqli_takefirst($conn->query("SELECT ID FROM user WHERE username = '$sesionUsername'"));
-$abtClass= $conn->query("select * from class where homeroom = '$profId'");
-$row = $abtClass->fetch_assoc();
-$classname =$row["name"];
-echo"$classname";
+
 include "MakeSchedule.php";
 ?>
 

@@ -14,6 +14,7 @@ $sesionUsername=$_SESSION["username"];
 $both= $conn->query("SELECT username, password from USER where permission = 3 AND username = '$sesionUsername'");
 while ($row = $both->fetch_assoc() )
 {
+  unset($conn);
   if($row["username"]==$sesionUsername&&password_verify($_SESSION["password"] ,$row["password"]))
   {
     $servername = "localhost";
