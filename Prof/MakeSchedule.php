@@ -1,13 +1,22 @@
 <form method = "post">
-<table>
-<tr><td>  </td><td>pon</td><td>tor</td><td>sre</td><td>čet</td><td>pet</td></tr>
 <?php
-//include "ProfConfig.php";
+
 $abtClass= $conn->query("select * from class where homeroom = '$profId'");
 $row = $abtClass->fetch_assoc();
 $classname =$row["name"];
 $classID=$row["id"];
-echo"$classname $classID DUK ";
+
+
+
+?>
+
+<table>
+<tr><td>  </td><td>pon</td><td>tor</td><td>sre</td><td>čet</td><td>pet</td></tr>
+<?php
+//include "ProfConfig.php";
+
+
+
 
 
 

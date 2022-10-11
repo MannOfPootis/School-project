@@ -25,10 +25,13 @@ while ($row = $both->fetch_assoc() )
       die("Connection failed: " . $conn->connect_error);
       header("location:localhost/School-Project/logout.php");
     }
-    
+    else{
+
+    }
+
     //break;
   }
-  
+
 }
 */
 
