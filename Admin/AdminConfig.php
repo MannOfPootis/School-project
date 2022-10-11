@@ -6,10 +6,11 @@ password "9X/hjpuw[o..bjJ."
 
 
 */
-//session_start();
-include "../Methods.php";
-include "../Config.php";
+//session_start();*/
 
+include "../Methods.php";
+include "../config.php";
+/*
 $sesionUsername=$_SESSION["username"];
 $both= $conn->query("SELECT username, password from USER where permission = 3 AND username = '$sesionUsername'");
 while ($row = $both->fetch_assoc() )
@@ -22,15 +23,14 @@ while ($row = $both->fetch_assoc() )
     $conn = new mysqli($servername, $username, $password,"šola");
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
-    }
-    else{
       header("location:localhost/School-Project/logout.php");
     }
+    
     //break;
   }
   
 }
-
+*/
 
 /*if(sqli_takefirst("")){
 
