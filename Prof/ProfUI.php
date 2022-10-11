@@ -42,6 +42,7 @@
   text-align: center;
 }
 </style>
+<link href='../theme_1.css' rel='stylesheet'>
 <script>
 /*
 document.querySelectorAll(".drop_input").forEach((inputElement) => {
@@ -121,17 +122,22 @@ function updateThumbnail(dropZoneElement, file) {
 
 <div class="main_box">
 
-
+<table>
 
 you are the homeroom teacher of <?php
 
 $profId =  sqli_takefirst($conn->query("SELECT ID FROM user WHERE username = '$sesionUsername'"));
-
-include "MakeSchedule.php";
-
 ?>
 
+<div>
+<?php
+include "MakeSchedule.php";?>
+</div>
 
+<input type ="submit">
+
+
+<table>
 </div>
 
 

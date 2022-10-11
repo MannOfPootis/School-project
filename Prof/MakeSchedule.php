@@ -49,7 +49,7 @@ if(
 }
 
 for ($hour = 0; $hour <= 8; $hour++){
-    echo"<tr>sds";
+    echo"<tr>";
         for($day=0; $day <= 5;$day++ )
         {
 
@@ -90,6 +90,6 @@ for ($hour = 0; $hour <= 8; $hour++){
 }
 
 ?>
-<input type ="submit">
+
 </table>
 </form>
