@@ -126,7 +126,7 @@ function updateThumbnail(dropZoneElement, file) {
 <tr>
 
 <td><h1>you are the homeroom teacher of</h1></td> <?php
-
+$sesionUsername=$_SESSION["username"];
 $profId =  sqli_takefirst($conn->query("SELECT ID FROM user WHERE username = '$sesionUsername'"));
 
 
