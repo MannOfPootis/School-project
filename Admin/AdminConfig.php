@@ -7,7 +7,7 @@ password "9X/hjpuw[o..bjJ."
 
 */
 //session_start();
-
+include "../Methods.php";
 include "../Config.php";
 
 $sesionUsername=$_SESSION["username"];
@@ -25,13 +25,14 @@ while ($row = $both->fetch_assoc() )
       header("location:localhost/School-Project/logout.php");
     }
     else{
-      
+
     }
+
     //break;
   }
-  
-}
 
+}
+*/
 
 /*if(sqli_takefirst("")){
 

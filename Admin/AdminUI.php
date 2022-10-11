@@ -6,7 +6,9 @@
 
        <form action ="" method = "post">
         <?php
+       
 include 'AdminConfig.php';
+echo "$username";
 foreach($_POST as $name => $answer)
 {
     echo "<h1>$name $answer</h1> <br> ";
