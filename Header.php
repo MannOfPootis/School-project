@@ -1,8 +1,8 @@
 
 	<!DOCTYPE html>
 	<?php 
-		include "config.php";
-		include "Methods.php";
+		include "../config.php";
+		include "../Methods.php";
 	
 	 ?>
 	<html>

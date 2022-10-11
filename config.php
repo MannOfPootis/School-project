@@ -1,6 +1,10 @@
 <?php
+$k= session_status();
+if ($k == 1) 
+{
+  session_start();
+}
 
-session_start();
 
 
 $servername = "localhost";

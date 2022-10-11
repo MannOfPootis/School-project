@@ -23,11 +23,12 @@ while ($row = $both->fetch_assoc() )
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
+    else{
+      header("location:localhost/School-Project/logout.php");
+    }
     //break;
   }
-  else{
-    header("location:localhost/School-Project/logout.php");
-  }
+  
 }
 
 

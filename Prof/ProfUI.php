@@ -113,15 +113,27 @@ function updateThumbnail(dropZoneElement, file) {
 </script>
 <body>
 <?php
-include "ProfConfig.php";
-//include "../Methods.php";
+
+
 ?>
+
+<?php include '../header.php'; include "ProfConfig.php"; ?>
+
+<div class="main_box">
+
+
+
 you are the homeroom teacher of <?php
 
 $profId =  sqli_takefirst($conn->query("SELECT ID FROM user WHERE username = '$sesionUsername'"));
 
 include "MakeSchedule.php";
+
 ?>
+
+
+</div>
+
 
 	<!--<form action="" method="post">
   <div class="drop">
@@ -146,5 +158,8 @@ include "MakeSchedule.php";
         }
     }*/
 ?>-->
+
+<?php include '../footer.php' ?>
 </body>
+
 </html>

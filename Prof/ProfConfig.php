@@ -7,8 +7,8 @@ password "RnvsX6q8AhwN_E!q"
 
 */
 //session_start();
-include "../Methods.php";
-include "../Config.php";
+
+
 
 $sesionUsername=$_SESSION["username"];
 $both= $conn->query("SELECT username, password from USER where permission = 3 AND username = '$sesionUsername'");
