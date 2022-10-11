@@ -1,6 +1,9 @@
 
 
-   
+   <?php include '../Header.php'; ?>
+   <link href='../theme_1.css' rel='stylesheet'>
+<div class="main_box">
+
        <form action ="" method = "post">
         <?php
 include 'AdminConfig.php';
@@ -75,3 +78,7 @@ while ($allDifArray=mysqli_fetch_array($allDif)){
 <a href="http://localhost/school-project/Admin/CreateClass.php" >create class</a>
 <a href="http://localhost/school-project/Admin/CreateSubject.php" >create subject</a>
 <?php //include "CreateClass.php";?>
+</div>
+
+
+<?php include '../footer.php' ?>

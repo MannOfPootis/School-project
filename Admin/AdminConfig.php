@@ -7,7 +7,7 @@ password "9X/hjpuw[o..bjJ."
 
 */
 //session_start();
-include "../Methods.php";
+
 include "../Config.php";
 
 $sesionUsername=$_SESSION["username"];

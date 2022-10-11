@@ -101,4 +101,3 @@ for ($hour = 0; $hour <= 8; $hour++){
 ?>
 
 </table>
-</form>
