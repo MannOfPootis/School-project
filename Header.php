@@ -35,10 +35,10 @@
 				unset($uN);
 				echo"<a class='avi' href='".$status."MainPage.php'>Home</a> ";
 			}?>
-			<a class='avi' href='MainPage.php'>Home</a> 			
-			| <a class="avi" href="login.php">Log in</a>
-			| <a class="avi" href="Logout.php">Log out</a> 
-			| <a class="avi" href="Register.php">Register</a>
+			<a class='avi' href='http://localhost/School-project/MainPage.php'>Home</a> 			
+			| <a class="avi" href="http://localhost/School-project/login.php">Log in</a>
+			| <a class="avi" href="http://localhost/School-project/Logout.php">Log out</a> 
+			| <a class="avi" href="http://localhost/School-project/Register.php">Register</a>
 			
 			<hr class="main">
 		

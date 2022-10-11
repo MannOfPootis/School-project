@@ -22,9 +22,10 @@ while ($row = $both->fetch_assoc() )
     $conn = new mysqli($servername, $username, $password,"šola");
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
+      header("location:localhost/School-Project/logout.php");
     }
     else{
-      header("location:localhost/School-Project/logout.php");
+      
     }
     //break;
   }

@@ -123,10 +123,22 @@ function updateThumbnail(dropZoneElement, file) {
 <div class="main_box">
 
 <table>
+<tr>
 
-you are the homeroom teacher of <?php
+<td><h1>you are the homeroom teacher of</h1></td> <?php
 
 $profId =  sqli_takefirst($conn->query("SELECT ID FROM user WHERE username = '$sesionUsername'"));
+
+
+$abtClass= $conn->query("select * from class where homeroom = '$profId'");
+$row = $abtClass->fetch_assoc();
+$classname =$row["name"];
+$classID=$row["id"];
+
+echo"<td> <h1>".$classname ."</h1> </td>";
+
+
+
 ?>
 
 <div>
@@ -135,7 +147,7 @@ include "MakeSchedule.php";?>
 </div>
 
 <input type ="submit">
-
+</form>
 
 <table>
 </div>
