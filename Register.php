@@ -28,16 +28,33 @@ include "Header.php";
             }
             //document.getElementById("problem").innerHTML=password.value;
         }
-        /*function checkPupil()
+        function checkPupil()
         {
-            document.write("aids");
-            choice=document.getElementByName("claim");
-            choice.innerHTML="sdsda"
-            if(choice.value=="1"){
-                document.write("aids");
+            
+            if(document.getElementById("selected").value ==1||document.getElementById("selected").value ==1){
+                <?php
+                    
 
+                ?>
+                document.getElementById("dodo").innerHTML="I atend: <select style=' background-color: #51E181; height:26px; ' name = 'class'><?php
+                $classesSqli =$conn->query("SELECT * FROM CLASS");
+                while($classArray=$classesSqli->fetch_assoc())
+                {
+                    $n= $classArray["name"];
+                    $i= $classArray["id"];
+                    echo"<option value ='$i'>$n</option> ";
+                }
+                
+                ?></select>";
+                
             }
-        }*/
+            else{
+                document.getElementById("dodo").innerHTML="";
+            }
+            
+        }
+        
+        
     </script>
 
 
@@ -79,13 +96,14 @@ Username:   <input type="text" name="username"><br>
 
 
 
-I am a: <select name="claim" style=" background-color: #51E181; height:26px; " onclick="class_check()"  id="selected" >
 
+I am a: <select name="claim" style=" background-color: #51E181; height:26px; " onchange="checkPupil()"  id="selected" >
 
+        <option  value="2">Proffessor</option>
 
         <option  value="1" >Pupil</option>
 
-        <option  value="2">Proffessor</option>
+        
 
         <option  value= "3">Admin</option>
 
@@ -93,7 +111,7 @@ I am a: <select name="claim" style=" background-color: #51E181; height:26px; " o
 
         </select><br>
 
-
+    <div id = "dodo"></div>
 
 Password:   <input type="password" name="password"id ="password" onchange="checkok()"><br>
 
@@ -150,7 +168,7 @@ Password again<input type = "password" name="password2" id ="password1" onchange
                 $sql = "INSERT INTO user(name  ,surname ,username,claim   ,password)
                 values('$firstname','$lastname','$username','$claim','$password')";
                 if ($conn->query($sql)) {
-                    echo "<h1 style ='color: green;'>New record created successfully</h1>";
+                    //echo "<h1 style ='color: green;'>New record created successfully</h1>";
                   } else {
                     echo "Error: " . $sql . "<br>" . $conn->error;
                   }
@@ -161,7 +179,7 @@ Password again<input type = "password" name="password2" id ="password1" onchange
                 values('$idUser',$idClass )";
                 if ($conn->query($sql))
                 {
-                    echo "<h1 style ='color: green;'>New record created successfully</h1>";
+                    //echo "<h1 style ='color: green;'>New record created successfully</h1>";
                   } else {
                     echo "Error: " . $sql . "<br>" . $conn->error;
                   }
