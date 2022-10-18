@@ -67,7 +67,7 @@ while ($allDifArray=mysqli_fetch_array($allDif)){
 ';
 }
 
-?>
+?><h1>you are now the admin please don't fuck anything up</h1>
 <input type ="submit">
     </form>
 
@@ -76,7 +76,7 @@ while ($allDifArray=mysqli_fetch_array($allDif)){
     <select value="no" >no</select>
     <select value="yes" >esy</select>
 </form>-->
-<h1>you are now the admin please don't fuck something up</h1>
+
 <a href="http://localhost/school-project/Admin/CreateClass.php" >create class</a>
 <a href="http://localhost/school-project/Admin/CreateSubject.php" >create subject</a>
 <?php //include "CreateClass.php";?>
