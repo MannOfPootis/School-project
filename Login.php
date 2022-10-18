@@ -28,6 +28,11 @@ if(
                 header("location:http://localhost/school-project/Prof/ProfUI.php");
                 break;
               }
+            case 1:
+              {
+                header("location:http://localhost/school-project/Pupil/Home.php");
+                break;
+            }
 
           }
             header('Refresh: 0');
