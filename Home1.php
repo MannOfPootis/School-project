@@ -1,9 +1,9 @@
-<?php include "../Header.php";
+<?php include "Header.php";
 
-
+ 	
 
   ?>
-<link href='../theme_1.css' rel='stylesheet'>
+<link href='theme_1.css' rel='stylesheet'>
 
 <div class="main_box">
 
@@ -14,11 +14,13 @@
  			<div style="border-bottom-style: solid;"> This is you :    </div>
  			<?php
 			$u = $_SESSION["username"]; 
-			$userSQLI=$conn->query("SELECT * , class.name as keke FROM USER INNER JOIN atends on(User.id=atends.user) inner join class on (atends.ID_class =class.id) WHERE USER.NAME ='$u'");
+			echo "$u";
+			$userSQLI=$conn->query("SELECT * FROM USER  WHERE USER.NAME ='$u'");
 			if($userArray =$userSQLI->fetch_assoc()){
+				echo "K";
 				$name=sqli_takefirst($conn->query("SELECT NAME FROM USER WHERE USERNAME = '$u'"));
 				$surname=$userArray["surname"];
-				$class=$userArray["keke"];
+				$class=sqli_takefirst($conn->query("SELECT class.name FROM USER inner join atends on(atends.user = user.id) inner join class on(atends.ID_class = class.id) WHERE USERNAME = '$u'"));
 				$classid=$userArray["id"];
 
 			}
@@ -99,4 +101,4 @@
 
 
 
-<?php include"../footer.php"  ?>
+<?php include "footer.php"  ?>

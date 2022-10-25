@@ -4,7 +4,7 @@
    <link href='../theme_1.css' rel='stylesheet'>
 <div class="main_box">
 
-       <form action ="" method = "post">
+      
         <?php
        
 include 'AdminConfig.php';
@@ -29,12 +29,18 @@ foreach($_POST as $name => $answer)
             $conn->query("DELETE from atends  where user = '$idUser'");
             break;
     }
+
 }
 
 
 
 $allDif = $conn->query("SELECT * FROM user  WHERE claim > permission /*AND claim =3*/");
+$k=true;
 while ($allDifArray=mysqli_fetch_array($allDif)){
+ if($k)
+ {
+    echo'<form action ="" method = "post">'
+ }
     $claimUsername=$allDifArray["username"];
     $name=$allDifArray["name"];
     $surname= $allDifArray["surname"];
@@ -65,12 +71,16 @@ while ($allDifArray=mysqli_fetch_array($allDif)){
    
 
 ';
+if($k){
+echo'<input type ="submit">
+</form>';
+$k= false;
+}
 }
 
 ?><h1>you are now the admin please don't fuck anything up</h1>
-<input type ="submit">
-    </form>
-    
+
+
 <!--<p>can you confirm ?</p>
 <form method = "post">
     <select value="no" >no</select>
