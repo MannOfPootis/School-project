@@ -30,7 +30,7 @@ if(
               }
             case 1:
               {
-                header("location:http://localhost/school-project/Pupil/Home.php");
+                header("location:http://localhost/school-project/Home1.php");
                 break;
             }
 

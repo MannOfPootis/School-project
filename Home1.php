@@ -20,8 +20,8 @@
 				echo "K";
 				$name=sqli_takefirst($conn->query("SELECT NAME FROM USER WHERE USERNAME = '$u'"));
 				$surname=$userArray["surname"];
-				$class=sqli_takefirst($conn->query("SELECT class.name FROM USER inner join atends on(atends.user = user.id) inner join class on(atends.ID_class = class.id) WHERE USERNAME = '$u'"));
-				$classid=$userArray["id"];
+				$class=sqli_takefirst($conn->query("SELECT class.name FROM USER inner join atends on(atends.user = user.id) inner join class on(atends.ID_class = class.id) WHERE user.username = '$u'"));
+				$classid=sqli_takefirst($conn->query("SELECT class.id FROM USER inner join atends on(atends.user = user.id) inner join class on(atends.ID_class = class.id) WHERE user.username = '$u'"));
 
 			}
 
@@ -72,15 +72,16 @@
 				
 					echo"</tr>";
 				}
-					$scheduleSqli=$conn->query("SELECT * FROM SCHEDULE WHERE CLASS ='$classid'");
+					$scheduleSqli=$conn->query("SELECT * FROM SCHEDULE  WHERE CLASS ='$classid'");
 					while($scheduleArray = $scheduleSqli->fetch_assoc())
 					{
 						$hour=$scheduleArray["HOUR"];
 						$day = $scheduleArray["DAY"];
 						$subject = $scheduleArray["SUBJECT"];
-						$teacher = $scheduleArray["DAY"];
+						$teacher = $scheduleArray["TEACHER"];
+						$subject = sqli_takefirst($conn->query("SELECT NAME FROM SUBJECTS WHERE id='$subject'"));
 						/*$class = $scheduleArray["DAY"];*/
-						echo"<script> document.getElementById('$day,$hour,subject').innerHTML='dasde';</script>";
+						echo"<script> document.getElementById('$day,$hour,subject').innerHTML='$subject';</script>";
 						//$schedule array
 					}
 				?>	
@@ -88,7 +89,7 @@
               
 
             </div>
-			<script> document.getElementById('2,2,subject').innerHTML='dasde';</script>
+			
 			</form>
 
 				</div>
