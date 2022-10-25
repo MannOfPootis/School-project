@@ -304,7 +304,7 @@ background: rgba(0,0, 0, .5);
    background-color: #51E181;
 
    
-    width: 43%;
+    width: 51%;
    height: 450PX;
    border-style: solid;
    display: flex;
@@ -314,7 +314,7 @@ background: rgba(0,0, 0, .5);
 .home_mid{
    border-style: solid;
    flex-direction: column;
-    width: 33%;
+    width: 25%;
 }
 
 .info {
