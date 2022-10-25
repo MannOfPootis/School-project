@@ -37,10 +37,6 @@
 			</div>
 
 
-			<div class="home_mid">
-
-
-			</div>
 
 
 
