@@ -39,7 +39,7 @@ $k=true;
 while ($allDifArray=mysqli_fetch_array($allDif)){
  if($k)
  {
-    echo'<form action ="" method = "post">'
+    echo'<form action ="" method = "post">';
  }
     $claimUsername=$allDifArray["username"];
     $name=$allDifArray["name"];
