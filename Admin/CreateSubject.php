@@ -1,3 +1,8 @@
+<link href='../theme_1.css' rel='stylesheet'>
+<?php
+include "../Header.php";
+?>
+
 <form method="post" action="">
 
 

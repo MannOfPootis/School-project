@@ -3,9 +3,6 @@
 <div class="main_box">
 
 
-<?php 
-
-?>
 
 	
 </div>
