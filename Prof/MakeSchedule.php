@@ -23,11 +23,12 @@ $classID=$row["id"];
 if(
     isset($_POST["1,1,13"])||true
 ){
+
     $endArray;
     foreach($_POST as $val ){
         $thingArray=explode(",", $val,3);
         $thot=$thingArray['0'];
-        echo "$val";
+        //echo "$val";
     }
 
     for ($hour = 0; $hour <= 8; $hour++)
