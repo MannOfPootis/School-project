@@ -141,7 +141,7 @@ echo"<td> <h1>".$classname ."</h1> </td>";
 
 ?>
 
-<div>
+<div >
 <?php
 include "MakeSchedule.php";?>
 </div>
