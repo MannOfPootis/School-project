@@ -141,10 +141,13 @@ echo"<td> <h1>".$classname ."</h1> </td>";
 
 ?>
 
-<div >
+
 <?php
-include "MakeSchedule.php";?>
-</div>
+echo "<div style='scrollable-y:auto ; height: 20%;'>";
+include "MakeSchedule.php";
+echo "</div>";
+?>
+
 
 <input type ="submit">
 </form>
