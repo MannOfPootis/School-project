@@ -1,3 +1,4 @@
+</div></div>
 </div>
 </center>
 <div class="nav">
@@ -7,8 +8,7 @@
    
 <a> something and stuff   </a> |  <a>   and then like something else </a>
 
-</div>
-</div>
+
 <script>
 	
 
