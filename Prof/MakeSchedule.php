@@ -29,12 +29,14 @@ if(
         $thot=$thingArray['0'];
         echo "$val";
     }
+    echo 'aaaaaa';
     for ($hour = 0; $hour <= 8; $hour++)
     {
         for($day=0; $day <= 5;$day++ )
         {
             if(isset($_POST["$day,$hour,subject"])&&isset($_POST["$day,$hour,teach"]))
             {
+                
                 //$classname
                 $teacher=$_POST["$day,$hour,teach"];
                 $subject=$_POST["$day,$hour,subject"];
@@ -49,10 +51,12 @@ if(
                 }
                 
                 $conn->query("INSERT INTO schedule(class,teacher,subject,hour,day) values('$classID','$teacher','$subject','$hour','$day')");
+                echo '</div>';
             }
 
         }
     }
+    echo 'aaaaa';
     //echo "$thot";
 
 }
