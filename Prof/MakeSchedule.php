@@ -30,7 +30,7 @@ if(
         $thot=$thingArray['0'];
         //echo "$val";
     }
-    echo 'bbbbbb';
+    //echo 'bbbbbb';
     for ($hour = 0; $hour <= 8; $hour++)
     {
         for($day=0; $day <= 5;$day++ )
@@ -57,7 +57,7 @@ if(
 
         }
     }
-    echo 'aaaaa';
+    //echo 'aaaaa';
     //echo "$thot";
 
 }
