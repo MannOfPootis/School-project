@@ -39,7 +39,7 @@
 
 			<div class="home_mid">
 				<?php
-				include "SQLTerminal.php";
+				//include "SQLTerminal.php";
 
 				?>
 
