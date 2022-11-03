@@ -30,7 +30,7 @@ if(
         $thot=$thingArray['0'];
         //echo "$val";
     }
-    echo 'aaaaaa';
+    echo 'bbbbbb';
     for ($hour = 0; $hour <= 8; $hour++)
     {
         for($day=0; $day <= 5;$day++ )
@@ -45,7 +45,7 @@ if(
                 $sql="DELETE FROM SCHEDULE WHERE class='$classID' and teacher='$teacher' and hour ='$hour' and day ='$day'";
                 if ($conn->query($sql))
                 {
-                    echo "<h1 style ='color: green;'>New record created successfully</h1>";
+                    echo "<h2 style ='color: green;'>New record created successfully</h2>";
                 } else 
                 {
                     echo "Error: " . $sql . "<br>" . $conn->error;

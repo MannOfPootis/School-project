@@ -302,8 +302,8 @@ background: rgba(0,0, 0, .5);
 }
 .home_right{
    background-color: #51E181;
-
    
+   width: 600px;
    height: 450PX;
    border-style: solid;
    display: flex;

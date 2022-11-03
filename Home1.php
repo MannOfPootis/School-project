@@ -53,10 +53,16 @@
 
  			<div class="home_right">
 
-			<form action="functions.php" method="POST">
+			<form action="functions.php" method="POST" >
+
+
+
+
  			<div style="border-bottom-style: solid;"> YOUR TIMETABLE </div>
+
             <div class="info" style="text-align: center; width: 500px; height: 400px;">      
-			<table>
+			
+			<table >
 				<tr><td>  </td><td>pon</td><td>tor</td><td>sre</td><td>čet</td><td>pet</td></tr>
 			<?php
 				for ($hour = 0; $hour <= 8; $hour++){
@@ -65,7 +71,7 @@
 						{
 				
 							if($day>0){
-							echo"<td><p id = '$day,$hour,subject'>h</p>";
+							echo"<td><p style='margin: 1px' id = '$day,$hour,subject'>h</p>";
 							
 				
 							}
@@ -90,7 +96,7 @@
 					}
 				?>	
 				</table>
-              
+			
 
             </div>
 			
