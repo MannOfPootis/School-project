@@ -29,7 +29,6 @@ if(
         $thot=$thingArray['0'];
         //echo "$val";
     }
-
     for ($hour = 0; $hour <= 8; $hour++)
     {
         for($day=0; $day <= 5;$day++ )
@@ -56,7 +55,7 @@ if(
 
         }
     }
-   
+    echo 'aaaaa';
     //echo "$thot";
 
 }
