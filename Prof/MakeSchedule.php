@@ -19,7 +19,7 @@ $classID=$row["id"];
 
 
 
-
+    echo "bbbbbb";
 if(
     isset($_POST["1,1,13"])||true
 ){
@@ -30,7 +30,6 @@ if(
         $thot=$thingArray['0'];
         //echo "$val";
     }
-    //echo 'bbbbbb';
     for ($hour = 0; $hour <= 8; $hour++)
     {
         for($day=0; $day <= 5;$day++ )

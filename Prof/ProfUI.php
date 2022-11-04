@@ -143,9 +143,9 @@ echo"<td> <h1>".$classname ."</h1> </td>";
 
 
 <?php
-echo "<div style='scrollable-y:auto ; height: 20%;'>";
+echo "<div style='scrollable-y:auto ; height: 20%;'>";echo "</div>";
 include "MakeSchedule.php";
-echo "</div>";
+
 ?>
 
 

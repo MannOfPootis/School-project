@@ -260,7 +260,7 @@ hr.RL{
 .main_box
 {
   /* background-image: url("scc-back.jpg");*/
-
+ overflow: auto;
  align-content: center;
  width: 90%;
  padding-top: 50px;
