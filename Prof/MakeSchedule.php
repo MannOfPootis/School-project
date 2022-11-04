@@ -19,7 +19,6 @@ $classID=$row["id"];
 
 
 
-    echo "bbbbbb";
 if(
     isset($_POST["1,1,13"])||true
 ){
@@ -56,7 +55,7 @@ if(
 
         }
     }
-    //echo 'aaaaa';
+    echo 'aaaaa';
     //echo "$thot";
 
 }
