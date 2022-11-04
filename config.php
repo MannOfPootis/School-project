@@ -7,7 +7,7 @@ if ($k == 1)
 
 //megaconfig
 
-
+$userPerm;
 $servername = "localhost";
 $username = "noone";//ime računa
 $password = "a/[kvpL_D[poo4J*";// geslo
@@ -30,11 +30,12 @@ if(isset($_SESSION["username"])&&isset($_SESSION["password"]))
     {
       
       $userPerm=$user["permission"];
+      //echo"$userPerm";
       switch($userPerm)
       {
       case 1:
       {
-
+        
       }
       case 2:
         {
