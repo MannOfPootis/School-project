@@ -27,7 +27,7 @@
 			<a class="title" >  EviLWeeb  </a><br>
 
 			<?php
-			echo"$userPerm";
+			//echo"$userPerm";
 			if(isset($_SESISON["username"]))
 			{
 				$uN=$_SESSION["username"];
