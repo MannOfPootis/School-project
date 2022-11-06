@@ -29,13 +29,13 @@ if(isset($_SESSION["username"])&&isset($_SESSION["password"]))
     if(password_verify($_SESSION["password"],$user["password"]))
     {
       
-      const $userPerm=$user["permission"];
+      $userPerm=$user["permission"];
       //echo"$userPerm";
       switch($userPerm)
       {
       case 1:
       {
-        $servername = "localhost";
+            $servername = "localhost";
             $username = "Pupil";//ime računa
             $password = "qv.hgu!UgPmQF-FC";// geslo
             $conn = new mysqli($servername, $username, $password,"šola");
