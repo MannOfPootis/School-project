@@ -29,25 +29,32 @@ if(isset($_SESSION["username"])&&isset($_SESSION["password"]))
     if(password_verify($_SESSION["password"],$user["password"]))
     {
       
-      $userPerm=$user["permission"];
+      const $userPerm=$user["permission"];
       //echo"$userPerm";
       switch($userPerm)
       {
       case 1:
       {
-        
-      }
-      case 2:
-        {
-          
-            $servername = "localhost";
-            $username = "Prof";//ime računa
-            $password = "RnvsX6q8AhwN_E!q";// geslo
+        $servername = "localhost";
+            $username = "Pupil";//ime računa
+            $password = "qv.hgu!UgPmQF-FC";// geslo
             $conn = new mysqli($servername, $username, $password,"šola");
             if ($conn->connect_error) {
               die("Connection failed: " . $conn->connect_error);
               header("location:localhost/School-Project/logout.php");
             }
+      }
+      case 2:
+        {
+          
+          $servername = "localhost";
+          $username = "Prof";//ime računa
+          $password = "RnvsX6q8AhwN_E!q";// geslo
+          $conn = new mysqli($servername, $username, $password,"šola");
+          if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+            header("location:localhost/School-Project/logout.php");
+          }
             
             //break;
           

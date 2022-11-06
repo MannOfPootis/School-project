@@ -40,7 +40,8 @@
 			<div class="home_mid">
 				<?php
 				//include "SQLTerminal.php";
-
+				include "Pupil/extraClasses.php";
+				include "Pupil/FindClasses.php"
 				?>
 
 
