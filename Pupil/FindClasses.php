@@ -24,6 +24,8 @@ if(isset($_GET['subject']))
     {
         $title= $material["title"];
         $teacher = $material["teachname"] ;
+        $due = $material["due"];//due date
+        echo "$due";
         $idAss=$material["ID"];
 
         echo "<br><a href='http://localhost/school-project/uploads/$title' download >$title</a>";
