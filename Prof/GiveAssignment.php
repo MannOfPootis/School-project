@@ -53,12 +53,13 @@ aerararasea
 
 
 $target_dir = "../uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+
 $uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"]) && isset($_POST["due"]) && isset($_POST["due"]) && isset($_POST["class"])&& isset($_POST["subject"])) {
-
+  $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+  $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
   $title = $_POST["title"];
   $due = $_POST["due"];
   $class = $_POST["class"];
@@ -85,6 +86,7 @@ if(isset($_POST["submit"]) && isset($_POST["due"]) && isset($_POST["due"]) && is
   // if everything is ok, try to upload file
   } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+      mkdir("../uploads/". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"]))."turnin");
       echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
     } else {
       echo "Sorry, there was an error uploading your file.";
