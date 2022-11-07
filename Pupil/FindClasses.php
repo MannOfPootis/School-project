@@ -27,7 +27,7 @@ if(isset($_GET['subject']))
 
         echo "<br><a href='http://localhost/school-project/uploads/$title' download >$title</a>";
         echo $teacher;
-        //include "turnin.php";
+        include "turnin.php";
     }
 
 
