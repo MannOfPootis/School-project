@@ -7,22 +7,33 @@
 <form action="" method="post" enctype="multipart/form-data">
   Select image to upload:
   <input type="file" name="fileToUpload" id="fileToUpload">
-  <input type="submit" value="Upload Image" name="submit">
+  <input type="submit" value="Upload Image" <?php
+  echo "name='submit$idAss'"
+  ?>>
 </form>
 
 </body>
 </html>
 
 <?php
+$name;
+$surname;
+$un=$_SESSION["username"];
+if($bruhmoment = $conn->query("select * from user where username = '$un'")->fetch_assoc() )
+{
+    $name =$bruhmoment["name"];
+    $surname = $bruhmoment["surname"];
+}
+
 $target_dir = "uploads/".$title."turnin/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-$target_file = $target_dir"dominikZagrusovcem." . $imageFileType;
-echo""
-echo"$imageFileType";
+$target_file = $target_dir."$name"."$surname-" . basename($_FILES["fileToUpload"]["name"]);
+
+//echo"$imageFileType";
 // Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
+if(isset($_POST["submit$idAss"])) {
   $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
   if($check !== false) {
     echo "File is an image - " . $check["mime"] . ".";

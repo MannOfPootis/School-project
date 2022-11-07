@@ -16,17 +16,19 @@ while ($classes = $classesSQLI->fetch_assoc()){
 if(isset($_GET['subject']))
 {
     $subject =  $_GET['subject'];
-    $materialSQLI =$conn->query("select assignment.* from assignment inner join user on (user.id = assignment.teacher) inner join subjects on (subjects.ID =assignment.subject) where subjects.ID = $subject and(assignment.class=$idClass or  assignment.class=0 ) ");
+    $materialSQLI =$conn->query("select assignment.* , user.name as teachname from assignment inner join user on (user.id = assignment.teacher) inner join subjects on (subjects.ID =assignment.subject) where subjects.ID = $subject and(assignment.class=$idClass or  assignment.class=0 ) ");
     
     //echo" select assignment.* from assignment inner join user on (user.id = assignment.teacher) inner join subjects on (subjects.ID =assignment.subject) where subjects.ID = '$subject' ";
     //echo $subject;
     while ($material = $materialSQLI->fetch_assoc())
     {
         $title= $material["title"];
-        $teacher = $material["teacher"] ;
+        $teacher = $material["teachname"] ;
+        $idAss=$material["ID"];
 
         echo "<br><a href='http://localhost/school-project/uploads/$title' download >$title</a>";
         echo $teacher;
+        //echo" Id$idAss ";
         include "turnin.php";
     }
 
