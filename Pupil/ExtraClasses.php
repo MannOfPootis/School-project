@@ -29,4 +29,4 @@ if(isset($_GET["subject"]))
 
 }
 
-?>
+?><hr style="background-color:#515b38;">

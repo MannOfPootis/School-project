@@ -1,4 +1,4 @@
-list of subjects you atend
+your classes:
 <?php
 $UN = $_SESSION["username"];
 $idClass = sqli_takefirst($conn->query("SELECT ID_class FROM ATENDS INNER JOIN USER on(atends.user=user.ID) where user.username ='$UN'"));
@@ -9,10 +9,16 @@ unset($UN);
 while ($classes = $classesSQLI->fetch_assoc()){
     $lul =$classes["subjectname"];
     $gigachad= $classes["gigachad"];
-    echo"<a href='http://localhost/school-project/Home1.php?subject=$gigachad'> $lul </a>";
+    echo"<a class='preety' href='http://localhost/school-project/Home1.php?subject=$gigachad'> $lul </a>";
     //echo"$UN";
 
 }
+?>
+
+<br>
+<hr style="background-color:#515b38;">
+
+<?php
 if(isset($_GET['subject']))
 {
     $subject =  $_GET['subject'];
@@ -25,13 +31,18 @@ if(isset($_GET['subject']))
         $title= $material["title"];
         $teacher = $material["teachname"] ;
         $due = $material["due"];//due date
-        echo "$due";
+        
         $idAss=$material["ID"];
-
-        echo "<br><a href='http://localhost/school-project/uploads/$title' download >$title</a>";
-        echo $teacher;
+        echo "
+        
+        $teacher assigned an assignment due by <b>$due  </b>
+        
+        <br> download the instructions: <a href='http://localhost/school-project/uploads/$title' download >$title</a>";
+       
         //echo" Id$idAss ";
         include "turnin.php";
+
+       echo "<hr style='background-color:#515b38;' >";
     }
 
 
