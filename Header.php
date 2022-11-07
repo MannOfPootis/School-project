@@ -78,7 +78,7 @@
 					echo "<a class='avi' href='http://localhost/School-project/Prof/ProfUI.php'>Hello teacher</a>" ;
 					break;
 				case 3:
-					echo "<a class='avi' href='http://localhost/School-project/Admin/AdminUI.php'>WElcome home GOD</a>";
+					echo "<a class='avi' href='http://localhost/School-project/Admin/AdminUI.php'>Welcome home GOD</a>";
 					break;
 				}
 				;
