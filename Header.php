@@ -31,8 +31,7 @@
 			//session_start();
 			//$k=$_SESISON["username"];
 			//echo $k;
-			if(/*isset($_SESISON["username"])*/
-				isset($userPerm))
+			if( isset($userPerm))
 			{
 				$uN=$_SESSION["username"];
 				$status =sqli_takefirst($conn->query("SELECT PERMISSION FROM USER WHERE USERNAME='$uN'"));
@@ -58,9 +57,38 @@
 			?>
 			
 						
-			| <a class="avi" href="http://localhost/School-project/login.php">Log in</a>
+		
+			
+			
 			| <a class="avi" href="http://localhost/School-project/Logout.php">Log out</a> 
 			| <a class="avi" href="http://localhost/School-project/Register.php">Register</a>
+			|   
+			<?php
+			if( isset($userPerm))
+			{
+				$uN=$_SESSION["username"];
+				$status =sqli_takefirst($conn->query("SELECT PERMISSION FROM USER WHERE USERNAME='$uN'"));
+				
+				unset($uN);
+				switch($userPerm){
+				case 1:
+					echo "<a class='avi' href='home1.php'>Hello pupil</a> ";
+					break;
+				case 2:
+					echo "<a class='avi' href='http://localhost/School-project/Prof/ProfUI.php'>Hello teacher</a>" ;
+					break;
+				case 3:
+					echo "<a class='avi' href='http://localhost/School-project/Admin/AdminUI.php'>WElcome home GOD</a>";
+					break;
+				}
+				;
+				
+			}
+			else {
+				echo "<a class='avi' href='http://localhost/School-project/login.php'>Log in</a>";
+			}
+			?>
+			
 			
 			<hr class="main">
 		

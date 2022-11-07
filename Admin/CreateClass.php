@@ -9,12 +9,12 @@ if(
     isset($_POST["className"])&&
     isset($_POST["homeroom"])
 ){
-    echo ''.$_POST["className"].'';
+    echo '<div>'.$_POST["className"].'';
     $homeroomUsername=$_POST["homeroom"];
     $className=$_POST["className"];
     $homeroomID=sqli_takefirst( $conn->query("select ID from user where username = '$homeroomUsername'"));
-    echo"$homeroomUsername";
-    echo"$homeroomID";
+    echo" taken care of by $homeroomUsername";
+    echo"(ID $homeroomID) </div>";
     $conn->query("insert into class(homeroom,schedule, name) values($homeroomID,0,'$className')");
 }
 
