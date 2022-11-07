@@ -32,7 +32,7 @@
 			//$k=$_SESISON["username"];
 			//echo $k;
 			if(/*isset($_SESISON["username"])*/
-				$userPerm)
+				isset($userPerm))
 			{
 				$uN=$_SESSION["username"];
 				$status =sqli_takefirst($conn->query("SELECT PERMISSION FROM USER WHERE USERNAME='$uN'"));
