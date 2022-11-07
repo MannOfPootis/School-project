@@ -59,12 +59,12 @@
 $target_dir = "../uploads/";
 
 $uploadOk = 1;
-
+$teachID;
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"]) && isset($_POST["due"]) && isset($_POST["due"]) && isset($_POST["class"])&& isset($_POST["subject"])) {
   $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
- 
+
   $due = $_POST["due"];
   $class = $_POST["class"];
   $subject = $_POST["subject"];
@@ -97,6 +97,7 @@ if(isset($_POST["submit"]) && isset($_POST["due"]) && isset($_POST["due"]) && is
     }
   }
 }
+include "ViewTurnin.php";
 ?>
 
 </div>
