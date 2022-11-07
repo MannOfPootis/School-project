@@ -28,13 +28,17 @@
 
 			<?php
 			//echo"$userPerm";
-			if(isset($_SESISON["username"]))
+			//session_start();
+			//$k=$_SESISON["username"];
+			//echo $k;
+			if(/*isset($_SESISON["username"])*/
+				isset($userPerm))
 			{
 				$uN=$_SESSION["username"];
 				$status =sqli_takefirst($conn->query("SELECT PERMISSION FROM USER WHERE USERNAME='$uN'"));
 				
 				unset($uN);
-				switch($status){
+				switch($userPerm){
 				case 1:
 					echo "<a class='avi' href='home1.php'>Home</a> ";
 					break;
