@@ -13,16 +13,19 @@ while ($classes = $classesSQLI->fetch_assoc()){
     //echo"$UN";
 
 }
-/*if(isset($_GET['subject']))
+if(isset($_GET['subject']))
 {
     $subject =  $_GET['subject'];
-    $materialSQLI =$conn->query("select assignment.* from assignment inner join user on (user.id = assignment.teacher) inner join subjects on (subjects.ID =assignment.subject) where subjects.ID = '$subject' ");
+    $materialSQLI =$conn->query("select assignment.* from assignment inner join user on (user.id = assignment.teacher) inner join subjects on (subjects.ID =assignment.subject) where subjects.ID = $subject ");
+    //echo" select assignment.* from assignment inner join user on (user.id = assignment.teacher) inner join subjects on (subjects.ID =assignment.subject) where subjects.ID = '$subject' ";
+    echo $subject;
     while ($material = $materialSQLI.fetch_assoc())
     {
-
+        
     }
 
 
-}*/
+
+}
 
 ?>
