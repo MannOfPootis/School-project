@@ -4,12 +4,16 @@
 <html>
 <body>
   <?php include "../header.php";?>
+  <link href='../theme_1.css' rel='stylesheet'>
+
+<div class ="main_box">
 
 <form action="" method="post" enctype="multipart/form-data">
-  Select image to upload:
+  <div>Select instructions to upload:
   <input type="file" name="fileToUpload" id="fileToUpload">
-  
-  <input type = "date" name = "due">
+</div>
+<div>
+ Due by  <input type = "date" name = "due"> </div>
   for subject
   <select name = "subject">
     <option></option>
@@ -27,7 +31,7 @@
       }
     ?>
   </select>
-  for class
+  to class
   <select name = "class">
     <option value ="0">all</option>
     <?php
@@ -45,8 +49,8 @@
   </select>
   <input type="submit" value="Upload Image" name="submit">
 </form>
-aerararasea
-</body>sadeew
+
+</body>
 </html>
 
 <?php
@@ -93,6 +97,11 @@ if(isset($_POST["submit"]) && isset($_POST["due"]) && isset($_POST["due"]) && is
     }
   }
 }
+?>
+
+</div>
+<?php
+
 include "../footer.php";
 ?>
 
