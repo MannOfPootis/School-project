@@ -33,9 +33,13 @@ if(
                 header("location:http://localhost/school-project/Home1.php");
                 break;
             }
+            case 0:
+            {
+              echo"account created succesfully, await verification";
+            }
 
           }
-            header('Refresh: 0');
+         
 
         }
         else{
