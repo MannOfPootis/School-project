@@ -5,9 +5,9 @@
 <body>
 
 <form action="" method="post" enctype="multipart/form-data">
-  Select image to upload:
+  Upload what you wish to turn in
   <input type="file" name="fileToUpload" id="fileToUpload">
-  <input type="submit" value="Upload Image" <?php
+  <input type="submit" value="Turn in" <?php
   echo "name='submit$idAss'"
   ?>>
 </form>

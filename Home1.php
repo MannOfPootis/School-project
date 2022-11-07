@@ -38,10 +38,13 @@
 
 
 			<div class="home_mid">
+
 				<?php
 				//include "SQLTerminal.php";
 				include "Pupil/extraClasses.php";
-				include "Pupil/FindClasses.php"
+
+
+				include "Pupil/FindClasses.php";
 				?>
 
 
@@ -61,7 +64,7 @@
 
  			<div style="border-bottom-style: solid;"> YOUR TIMETABLE </div>
 
-            <div class="info" style="text-align: center; width: 500px; height: 400px;">      
+            <div style="text-align: center; width: auto; height: 400px;">      
 			
 			<table >
 				<tr><td>  </td><td>pon</td><td>tor</td><td>sre</td><td>čet</td><td>pet</td></tr>
