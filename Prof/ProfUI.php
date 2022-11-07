@@ -118,6 +118,6 @@ include "MakeSchedule.php";
         }
     }*/
 ?>-->
-<br>----------------------------------------------
-<a class="preety" href='http://localhost/School-project/Prof/ProfUI.php'>assignment</a>
+<br>
+<a class="preety" href='http://localhost/School-project/Prof/GiveAssignment.php'>assign an assignment</a>
 <?php include '../footer.php' ?>
