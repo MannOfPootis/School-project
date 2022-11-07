@@ -45,22 +45,22 @@ while ($allDifArray=mysqli_fetch_array($allDif)){
     $name=$allDifArray["name"];
     $surname= $allDifArray["surname"];
     $claim=$allDifArray['Claim'];
-    echo"$name claims to be ";
+    echo"$name $surname claims to be ";
     switch ($claim)
     {
         case 1:
-            echo "a pupil ";
+            echo "a<b> pupil,</b>";
             break;
         case 2:
-            echo "a proffessor ";
+            echo "a<b> proffessor,</b> ";
             break;
         case 3:
-            echo "an admin ";
+            echo "an<b> admin,</b> ";
             break;
     }
-    echo"their surname is $surname  $claimUsername ";
+    echo"their username is $claimUsername ";
     echo'
-
+    approve?
     <select name = '.$claimUsername.' > 
         <option value = "null"> null</option>
         <option value="no" >no</option>
