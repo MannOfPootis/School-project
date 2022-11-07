@@ -3,9 +3,9 @@
 <select name = "class">
     <option></option>
 <?php
-$teachers=$conn->query("SELECT * from class ");
+$teachers=$conn->query("SELECT * from user ");
 while ($teachArray=$teachers->fetch_assoc()){
-    $teachName=$teachArray["name"];
+    $teachName=$teachArray["username"];
     //$teachSurname=$teachArray["surnam"];
     $teachUsername=$teachArray["id"];
    echo" <option value='$teachUsername' >$teachName</option>";
@@ -21,8 +21,8 @@ while ($teachArray=$teachers->fetch_assoc()){
 if (isset($_POST["delete"]))
 {
     $clid= $_POST["class"];
-    $conn->query("DELETE FROM class where ID = $clid");
+    $conn->query("DELETE FROM user where ID = $clid");
 
 } 
-include "EditUser.php"
+include "EditSubject.php"
 ?>

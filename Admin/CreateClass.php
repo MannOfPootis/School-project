@@ -42,10 +42,6 @@ while ($teachArray=$teachers->fetch_assoc()){
 }
 
 
-if(isset($lul))
-{
-
-}
 
 
 
