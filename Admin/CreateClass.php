@@ -9,7 +9,7 @@ if(
     isset($_POST["className"])&&
     isset($_POST["homeroom"])
 ){
-    echo ''.$_POST["className"].'';
+    echo '<div>'.$_POST["className"].'';
     $homeroomUsername=$_POST["homeroom"];
     $className=$_POST["className"];
     $homeroomID=sqli_takefirst( $conn->query("select ID from user where username = '$homeroomUsername'"));
