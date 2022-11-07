@@ -13,9 +13,14 @@ if(
     $homeroomUsername=$_POST["homeroom"];
     $className=$_POST["className"];
     $homeroomID=sqli_takefirst( $conn->query("select ID from user where username = '$homeroomUsername'"));
-    echo" taken care of by $homeroomUsername";
-    echo"(ID $homeroomID) </div>";
-    $conn->query("insert into class(homeroom,schedule, name) values($homeroomID,0,'$className')");
+    echo"$homeroomUsername";
+    echo"$homeroomID";
+    if($conn->query("select username from class where name='$className'")->num_rows>0)
+                {
+                    echo "<h1 style ='color: red;'>Username already taken</h1>";
+                    $conn->query("insert into class(homeroom,schedule, name) values($homeroomID,0,'$className')");
+                }
+    
 }
 
 ?>

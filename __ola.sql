@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Gostitelj: 127.0.0.1
--- Čas nastanka: 25. okt 2022 ob 10.40
--- Različica strežnika: 10.4.20-MariaDB
--- Različica PHP: 8.0.9
+-- Host: 127.0.0.1
+-- Generation Time: Nov 07, 2022 at 06:51 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,36 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Zbirka podatkov: `šola`
+-- Database: `šola`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `atends`
+-- Table structure for table `assignment`
+--
+
+CREATE TABLE `assignment` (
+  `ID` int(11) NOT NULL,
+  `teacher` int(11) NOT NULL,
+  `subject` int(11) NOT NULL,
+  `due` date NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `class` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `assignment`
+--
+
+INSERT INTO `assignment` (`ID`, `teacher`, `subject`, `due`, `title`, `class`) VALUES
+(1, 13, 6, '2023-10-27', 'sasaeses', 3),
+(2, 13, 2, '2022-11-24', 'saeseaese', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `atends`
 --
 
 CREATE TABLE `atends` (
@@ -34,7 +57,7 @@ CREATE TABLE `atends` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Odloži podatke za tabelo `atends`
+-- Dumping data for table `atends`
 --
 
 INSERT INTO `atends` (`id`, `user`, `ID_class`) VALUES
@@ -43,7 +66,7 @@ INSERT INTO `atends` (`id`, `user`, `ID_class`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `class`
+-- Table structure for table `class`
 --
 
 CREATE TABLE `class` (
@@ -54,7 +77,7 @@ CREATE TABLE `class` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Odloži podatke za tabelo `class`
+-- Dumping data for table `class`
 --
 
 INSERT INTO `class` (`id`, `name`, `schedule`, `homeroom`) VALUES
@@ -64,7 +87,70 @@ INSERT INTO `class` (`id`, `name`, `schedule`, `homeroom`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `schedule`
+-- Table structure for table `extra_subjects`
+--
+
+CREATE TABLE `extra_subjects` (
+  `ID` int(11) NOT NULL,
+  `ID_sub` int(11) NOT NULL,
+  `ID_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `extra_subjects`
+--
+
+INSERT INTO `extra_subjects` (`ID`, `ID_sub`, `ID_user`) VALUES
+(25, 5, 3),
+(26, 5, 3),
+(27, 5, 555),
+(28, 5, 555),
+(29, 6, 20),
+(30, 0, 20),
+(31, 0, 20),
+(32, 0, 20),
+(33, 0, 20),
+(34, 0, 20),
+(35, 0, 20),
+(36, 0, 20),
+(37, 0, 20),
+(38, 0, 20),
+(39, 0, 20),
+(40, 0, 20),
+(41, 0, 20),
+(42, 0, 20),
+(43, 1, 20),
+(44, 1, 20),
+(45, 1, 20),
+(46, 1, 20),
+(47, 1, 20),
+(48, 6, 20),
+(49, 6, 20),
+(50, 2, 20),
+(51, 2, 20),
+(52, 2, 20),
+(53, 2, 20),
+(54, 6, 20),
+(55, 2, 20),
+(56, 2, 20),
+(57, 2, 20),
+(58, 2, 20),
+(59, 6, 20),
+(60, 6, 20),
+(61, 6, 20),
+(62, 6, 20),
+(63, 6, 20),
+(64, 6, 20),
+(65, 6, 20),
+(66, 6, 20),
+(67, 6, 20),
+(68, 2, 20),
+(69, 7, 20);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `schedule`
 --
 
 CREATE TABLE `schedule` (
@@ -77,7 +163,7 @@ CREATE TABLE `schedule` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Odloži podatke za tabelo `schedule`
+-- Dumping data for table `schedule`
 --
 
 INSERT INTO `schedule` (`ID`, `CLASS`, `TEACHER`, `SUBJECT`, `HOUR`, `DAY`) VALUES
@@ -469,7 +555,7 @@ INSERT INTO `schedule` (`ID`, `CLASS`, `TEACHER`, `SUBJECT`, `HOUR`, `DAY`) VALU
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `subjects`
+-- Table structure for table `subjects`
 --
 
 CREATE TABLE `subjects` (
@@ -478,11 +564,11 @@ CREATE TABLE `subjects` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Odloži podatke za tabelo `subjects`
+-- Dumping data for table `subjects`
 --
 
 INSERT INTO `subjects` (`ID`, `name`) VALUES
-(1, 'dsadxdees'),
+(1, 'VVO'),
 (2, 'MAT'),
 (3, 'ANG'),
 (4, 'UIP'),
@@ -493,7 +579,7 @@ INSERT INTO `subjects` (`ID`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -507,7 +593,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Odloži podatke za tabelo `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`username`, `password`, `permission`, `Claim`, `name`, `surname`, `ID`) VALUES
@@ -522,11 +608,17 @@ INSERT INTO `user` (`username`, `password`, `permission`, `Claim`, `name`, `surn
 ('555', '$2y$10$tObka7mUxH5l0rpRx.NyP.czaoJbBhSt0tmjPX1cT1JU.QZQIdH5a', 1, 1, '555', '555', 20);
 
 --
--- Indeksi zavrženih tabel
+-- Indexes for dumped tables
 --
 
 --
--- Indeksi tabele `atends`
+-- Indexes for table `assignment`
+--
+ALTER TABLE `assignment`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `atends`
 --
 ALTER TABLE `atends`
   ADD PRIMARY KEY (`id`),
@@ -534,77 +626,95 @@ ALTER TABLE `atends`
   ADD KEY `Atends_class` (`ID_class`);
 
 --
--- Indeksi tabele `class`
+-- Indexes for table `class`
 --
 ALTER TABLE `class`
   ADD PRIMARY KEY (`id`),
   ADD KEY `homeroom` (`homeroom`);
 
 --
--- Indeksi tabele `schedule`
+-- Indexes for table `extra_subjects`
+--
+ALTER TABLE `extra_subjects`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `schedule`
 --
 ALTER TABLE `schedule`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indeksi tabele `subjects`
+-- Indexes for table `subjects`
 --
 ALTER TABLE `subjects`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indeksi tabele `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`ID`);
 
 --
--- AUTO_INCREMENT zavrženih tabel
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT tabele `atends`
+-- AUTO_INCREMENT for table `assignment`
+--
+ALTER TABLE `assignment`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `atends`
 --
 ALTER TABLE `atends`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT tabele `class`
+-- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT tabele `schedule`
+-- AUTO_INCREMENT for table `extra_subjects`
+--
+ALTER TABLE `extra_subjects`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+
+--
+-- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=946;
 
 --
--- AUTO_INCREMENT tabele `subjects`
+-- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT tabele `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- Omejitve tabel za povzetek stanja
+-- Constraints for dumped tables
 --
 
 --
--- Omejitve za tabelo `atends`
+-- Constraints for table `atends`
 --
 ALTER TABLE `atends`
   ADD CONSTRAINT `Atends_class` FOREIGN KEY (`ID_class`) REFERENCES `class` (`id`),
   ADD CONSTRAINT `Atends_user` FOREIGN KEY (`user`) REFERENCES `user` (`ID`);
 
 --
--- Omejitve za tabelo `class`
+-- Constraints for table `class`
 --
 ALTER TABLE `class`
   ADD CONSTRAINT `class_ibfk_1` FOREIGN KEY (`homeroom`) REFERENCES `user` (`ID`);
