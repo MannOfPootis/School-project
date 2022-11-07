@@ -22,8 +22,9 @@ if( isset($_POST["subject"])){
                     echo "Error: " . $sql . "<br>" . $conn->error;
                   }
                 }
+                include "DeleteSubject.php";
                 $conn->close();
 
 
-
+               
 ?>

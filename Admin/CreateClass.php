@@ -15,11 +15,12 @@ if(
     $homeroomID=sqli_takefirst( $conn->query("select ID from user where username = '$homeroomUsername'"));
     echo"$homeroomUsername";
     echo"$homeroomID";
-    if($conn->query("select username from class where name='$className'")->num_rows>0)
+    if($conn->query("select * from subjects where name = '$className'")->num_rows>0)
                 {
                     echo "<h1 style ='color: red;'>Username already taken</h1>";
-                    $conn->query("insert into class(homeroom,schedule, name) values($homeroomID,0,'$className')");
+                    
                 }
+                $conn->query("insert into class(homeroom, name) values($homeroomID,'$className')");
     
 }
 
@@ -41,9 +42,10 @@ while ($teachArray=$teachers->fetch_assoc()){
 }
 
 
-/*if(isset()){
+if(isset($lul))
+{
 
-}*/
+}
 
 
 
@@ -51,3 +53,7 @@ while ($teachArray=$teachers->fetch_assoc()){
 </select>
 <input type="submit">
 </form>
+<?php
+include "DeleteClass.php";
+include "../footer.php"
+?>

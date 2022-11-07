@@ -98,4 +98,6 @@ $k= false;
 </div>
 
 
-<?php include '../footer.php' ?>
+<?php 
+include "../EditingTerminal.php";
+include '../footer.php'; ?>
