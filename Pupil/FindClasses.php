@@ -24,8 +24,10 @@ if(isset($_GET['subject']))
     {
         $title= $material["title"];
         $teacher = $material["teacher"] ;
-        echo $title;
+
+        echo "<br><a href='http://localhost/school-project/uploads/$title' download >$title</a>";
         echo $teacher;
+        //include "turnin.php";
     }
 
 
