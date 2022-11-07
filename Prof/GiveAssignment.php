@@ -64,7 +64,7 @@ $uploadOk = 1;
 if(isset($_POST["submit"]) && isset($_POST["due"]) && isset($_POST["due"]) && isset($_POST["class"])&& isset($_POST["subject"])) {
   $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-  $title = $_POST["title"];
+ 
   $due = $_POST["due"];
   $class = $_POST["class"];
   $subject = $_POST["subject"];
