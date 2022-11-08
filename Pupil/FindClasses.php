@@ -6,7 +6,8 @@ $idClass = sqli_takefirst($conn->query("SELECT ID_class FROM ATENDS INNER JOIN U
 $classesSQLI = $conn->query("select distinct subjects.name as subjectname,subjects.id as gigachad
     from subjects inner join extra_subjects on (extra_subjects.ID_sub=subjects.id)
     inner join user on (user.id=extra_subjects.ID_user)
-    innner join schedule on (subjects.id = )
+    inner join schedule on ((subjects.id = schedule.subject ) or   extra_subjects.ID_sub=subjects.id)
+    
     
     where user.username = '$UN'");
                              
@@ -36,14 +37,16 @@ if(isset($_GET['subject']))
         $username= $_SESSION["username"];
         $IDuser=sqli_takefirst($conn->query("select id from user where username = '$username'"));
         if($conn->query("delete from extra_subjects where ID_user ='$IDuser'and id_sub = '$subject'")){
-            echo "all goof";
+            //echo "all goof";
         }else{
             echo "Error: " ."delete from extra_subjects where ID_user = $IDuser and id_sub = $subject" . "<br>" . $conn->error;
         }
     }
     //$subject =  $_GET['subject'];
+    
     $materialSQLI =$conn->query("select assignment.* , user.name as teachname from assignment inner join user on (user.id = assignment.teacher) inner join subjects on (subjects.ID =assignment.subject) where subjects.ID = $subject and(assignment.class=$idClass or  assignment.class=0 ) ");
-    echo"<form method ='post'><input type ='submit' name ='delete$subject' value = 'remove yourself fom $subject'></form>";
+    //$subname= sqli_takefirst($conn->query("select name from subject where ID = '$subject'"));
+    //echo"<form method ='post'><input type ='submit' name ='delete$subject' value = 'remove yourself fom $subname'></form>";
     
     //echo" select assignment.* from assignment inner join user on (user.id = assignment.teacher) inner join subjects on (subjects.ID =assignment.subject) where subjects.ID = '$subject' ";
     //echo $subject;
