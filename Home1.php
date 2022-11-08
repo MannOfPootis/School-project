@@ -15,9 +15,9 @@
  			<?php
 			$u = $_SESSION["username"]; 
 			echo "$u";
-			$userSQLI=$conn->query("SELECT * FROM USER  WHERE USER.NAME ='$u'");
+			$userSQLI=$conn->query("SELECT * FROM USER  WHERE USER.USERNAME ='$u'");
 			if($userArray =$userSQLI->fetch_assoc()){
-				echo "K";
+				//echo "K";
 				$name=sqli_takefirst($conn->query("SELECT NAME FROM USER WHERE USERNAME = '$u'"));
 				$surname=$userArray["surname"];
 				$class=sqli_takefirst($conn->query("SELECT class.name FROM USER inner join atends on(atends.user = user.id) inner join class on(atends.ID_class = class.id) WHERE user.username = '$u'"));
